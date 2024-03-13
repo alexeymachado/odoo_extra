@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <record id="action_hc_patient" model="ir.actions.act_window">
+            <field name="name">Patient</field>
+            <field name="res_model">hc.patient</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+
+    <!-- hc.patient tree view -->
+    <record id="hc_patient_view_tree" model="ir.ui.view">
+        <field name="name">hc.patient.view.tree</field>
+        <field name="model">hc.patient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="birth_day"/>
+                <field name="age"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- hc.patient form view -->
+    <record id="hc_patient_view_form" model="ir.ui.view">
+        <field name="name">hc.patient.view.form</field>
+        <field name="model">hc.patient</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group string="Generals">
+                        <field name="contact_id"/>"
+                        <field name="name"/>
+                        <field name="first_name"/>
+                        <field name="last_name"/>
+                    </group>
+
+                    <group >
+                        <field name="mrn"/>
+                        <field name="hic"/>
+                        <field name="resident_type"/>
+                    </group>       
+
+                    <group string="Contact">  
+
+                        <field name="gender"/>
+                        <field name="phone"/>
+                        <field name="email_address"/>
+
+                    </group>
+ 
+                     <notebook>
+                        <page string="Contacto Emergencia">
+                            <group>
+                                <field name="emergency_contact_id"/>
+                                <field name="emergency_contact_relationship"/>
+                            </group>
+                        </page>
+
+                        <page string="Insurance">
+                            <field name='medicaid'/>
+                        </page>
+ 
+                    </notebook>    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+</odoo>

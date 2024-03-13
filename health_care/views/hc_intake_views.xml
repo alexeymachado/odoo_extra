@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <!-- hc.intake action window -->
+        <record id="hc_intake_action" model="ir.actions.act_window">
+            <field name="name">Intake</field>
+            <field name="res_model">hc.intake</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- hc_intake tree view -->
+        <record id="hc_intake_view_tree" model="ir.ui.view">
+            <field name="name">hc_intake_view_tree</field>
+            <field name="model">hc.intake</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="state"/>
+                    <field name="patient_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- hc_intake form view -->
+        <record id="model_name_view_form" model="ir.ui.view">
+            <field name="name">hc_intake_view_form</field>
+            <field name="model">hc.intake</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <head>
+                        <field name='state' widget="statusbar"/>
+                    </head>
+                
+                    <sheet>
+                        <group>
+                            <field name='patient_id'/>
+                            <field name='start_date'/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

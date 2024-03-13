@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_hc" name="Health Care">
+        <menuitem id="menu_hc_intake" name="Intake">
+            <menuitem id="menu_hc_intake_view" action="hc_intake_action"/>
+        </menuitem>
+
+        <menuitem id="menu_hc_contact" name="Contact">
+            <menuitem id="menu_hc_contact_view" action="hc_contact_action"/>
+        </menuitem>
+        <menuitem id="menu_hc_patient" name="Patient">
+            <menuitem id="menu_hc_patient_view" action="action_hc_patient"/>
+        </menuitem>
+        <menuitem id="menu_hc_physician" name="Physician">
+            <menuitem id="menu_hc_physician_view" action="action_hc_physician"/>
+        </menuitem>
+        <menuitem id="menu_hc_nurse" name="Nurse">
+            <menuitem id="menu_hc_nurse_view" action="action_hc_nurse"/>
+        </menuitem>
+        <menuitem id="menu_hc_visit" name="Visit">
+            <menuitem id="menu_hc_visit_view" action="action_hc_visit"/>
+        </menuitem>
+        <menuitem id="menu_hc_configuration" name="Configuracion">
+            <menuitem id="menu_hc_visit_type_view" action="action_hc_visit_type"/>
+        </menuitem>
+
+    </menuitem>
+</odoo>
