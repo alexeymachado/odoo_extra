@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <data>
         <record id="action_hc_visit" model="ir.actions.act_window">
             <field name="name">Visit</field>
@@ -7,4 +8,33 @@
             <field name="view_mode">tree,form</field>
         </record>
     </data>
+
+    <!-- hc_visit tree view -->
+    <record id="hc_visit_view_tree" model="ir.ui.view">
+        <field name="name">hc_visit.view.tree</field>
+        <field name="model">hc.visit</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="type_id"/>
+                <field name="nurse_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- hc_visit form view -->
+    <record id="hc_visit_view_form" model="ir.ui.view">
+        <field name="name">hc_visit.view.form</field>
+        <field name="model">hc.visit</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="type_id" options="{'no_create': True, 'no_open': True}" />
+                        <field name="nurse_id" options="{'no_create': True}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
 </odoo>
