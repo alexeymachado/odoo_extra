@@ -12,3 +12,12 @@ class HCIntake(models.Model):
     visit_ids = fields.One2many(comodel_name='hc.visit', inverse_name='intake_id')
     insurance_aproved = fields.Boolean()
     contacts_ids = fields.Many2many(comodel_name='hc.contact')
+    referal_source = fields.Char()
+    admin_date = fields.Date()
+    discharge_date = fields.Date()
+    diets=fields.Text()
+    allergies=fields.Text()
+    prescriber_order = fields.Image()
+    
+
+

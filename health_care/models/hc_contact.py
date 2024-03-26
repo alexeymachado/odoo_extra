@@ -11,6 +11,8 @@ class HCContact(models.Model):
     birth_day=fields.Date()
     primary_language= fields.Char()
     age = fields.Integer(compute='_compute_age')
+    sex = fields.Selection(selection=(('M', 'Masculino'), ('F', 'Femenino')))
+    race= fields.Selection(selection=(('W', 'White'), ('B', 'Black'), ('M','Meztiza')))
     ssn = fields.Char(string='Social Security Number')
     phone = fields.Char()
     address=fields.Char()

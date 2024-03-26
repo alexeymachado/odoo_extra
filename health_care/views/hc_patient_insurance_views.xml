@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <record id="action_hc_patient_insurance" model="ir.actions.act_window">
+            <field name="name">Patient Insurance</field>
+            <field name="res_model">hc.patient.insurance</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+
+    <!-- tree -->
+    <record id="hc_patient_insurance_view_tree" model="ir.ui.view">
+        <field name="name">hc.patient.insurance.view.tree</field>
+        <field name="model">hc.patient.insurance</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="insurance_agent_id"/>
+                <field name ='insurance_plan_id'/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- form -->
+    <record id="hc_patient_insurance_view_form" model="ir.ui.view">
+        <field name="name">hc.patient.insurance.view.form</field>
+        <field name="model">hc.patient.insurance</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group string="Generals">
+                        <field name="insurance_agent_id"/>
+                        <field name ='insurance_plan_id'/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+</odoo>

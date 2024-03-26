@@ -55,13 +55,18 @@
                      <notebook>
                         <page string="Contacto Emergencia">
                             <group>
-                                <field name="emergency_contact_id"/>
-                                <field name="emergency_contact_relationship"/>
+                                <field name="contact_ids"/>
                             </group>
                         </page>
 
                         <page string="Insurance">
-                            <field name='medicaid'/>
+                            <field name="insurance_ids"/>
+                        </page>
+
+                        <page string="Medicinas">
+                        </page>
+
+                        <page string="Visitas">
                         </page>
  
                     </notebook>    

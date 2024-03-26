@@ -15,20 +15,8 @@ class HCPatient(models.Model):
 
     mrn = fields.Char(string='Medical Record Number')
     hic = fields.Char(string='HIC')
-    medicaid = fields.Char()
 
     resident_type = fields.Char()
 
-    emergency_contact_id = fields.Many2one(comodel_name='hc.contact')
-    emergency_contact_relationship = fields.Char()
-
-    
-
-
-
-    
-    
-    
-
-
-
+    contact_ids = fields.One2many(comodel_name='hc.patient.contact', inverse_name='patient_id')
+    insurance_ids = fields.One2many(comodel_name='hc.patient.insurance', inverse_name='patient_id')
