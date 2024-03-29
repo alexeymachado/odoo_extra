@@ -10,3 +10,4 @@ from . import hc_intake
 from . import hc_insurance_agent
 from . import hc_insurance_plan
 from . import hc_patient_insurance
+from . import hc_patient_import

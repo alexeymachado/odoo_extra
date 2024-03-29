@@ -5,6 +5,7 @@ access_hc_nurse,hc.nurse,model_hc_nurse,base.group_user,1,1,1,1
 access_hc_patient,hc.patient,model_hc_patient,base.group_user,1,1,1,1
 access_hc_patient_contact,hc.patient.contact,model_hc_patient_contact,base.group_user,1,1,1,1
 access_hc_patient_insurance,hc.patient.insurance,model_hc_patient_insurance,base.group_user,1,1,1,1
+access_hc_patient_import,hc.patient.import,model_hc_patient_import,base.group_user,1,1,1,1
 access_hc_physician,hc.physician,model_hc_physician,base.group_user,1,1,1,1
 access_hc_visit,hc.visit,model_hc_visit,base.group_user,1,1,1,1
 access_hc_visit_type,hc.visit_type,model_hc_visit_type,base.group_user,1,1,1,1

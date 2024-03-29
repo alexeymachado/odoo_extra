@@ -22,7 +22,7 @@
         </record>
 
         <!-- hc_intake form view -->
-        <record id="model_name_view_form" model="ir.ui.view">
+        <record id="hc_intake_view_form" model="ir.ui.view">
             <field name="name">hc_intake_view_form</field>
             <field name="model">hc.intake</field>
             <field name="arch" type="xml">

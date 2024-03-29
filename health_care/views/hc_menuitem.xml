@@ -10,6 +10,7 @@
         </menuitem>
         <menuitem id="menu_hc_patient" name="Patient">
             <menuitem id="menu_hc_patient_view" action="action_hc_patient"/>
+            <menuitem  id="hc_patient_import_menu" action="hc_patient_import_action"/>
         </menuitem>
         <menuitem id="menu_hc_physician" name="Physician">
             <menuitem id="menu_hc_physician_view" action="action_hc_physician"/>

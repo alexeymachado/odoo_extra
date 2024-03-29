@@ -48,7 +48,7 @@
 
                         <field name="gender"/>
                         <field name="phone"/>
-                        <field name="email_address"/>
+                        <field name="email"/>
 
                     </group>
  

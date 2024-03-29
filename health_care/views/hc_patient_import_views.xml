@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+   
+   <record id="hc_patient_import_view_form" model="ir.ui.view">
+       <field name="name">hc_patient_import_view_form</field>
+       <field name="model">hc.patient.import</field>
+       <field name="arch" type="xml">
+           <form string="Import Patient">
+               <group>
+                   <group>
+                       <field name="file"/>
+                   </group>
+               </group>
+               <footer>
+                   <button
+                       name="patient_import"
+                       string="Import"
+                       type="object"
+                       class="btn-primary"
+                   />
+               </footer>
+           </form>
+       </field>
+   </record>
+      
+   <record id="hc_patient_import_action" model="ir.actions.act_window">
+       <field name="name">Import Patient</field>
+       <field name="res_model">hc.patient.import</field>
+       <field name="view_mode">form</field>
+       <field name="view_id" ref="hc_patient_import_view_form" />
+       <field name="target">new</field>
+   </record>
+</odoo>
