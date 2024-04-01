@@ -12,3 +12,11 @@ access_hc_visit_type,hc.visit_type,model_hc_visit_type,base.group_user,1,1,1,1
 access_hc_intake,hc.intake,model_hc_intake,base.group_user,1,1,1,1
 access_hc_insurance_agent,hc.insurance.agent,model_hc_insurance_agent,base.group_user,1,1,1,1
 access_hc_insurance_plan,hc.insurance.plan,model_hc_insurance_plan,base.group_user,1,1,1,1
+access_hc_discipline,hc.discipline,model_hc_discipline,base.group_user,1,1,1,1
+access_hc_intake_discipline,hc.intake.discipline,model_hc_intake_discipline,base.group_user,1,1,1,1
+access_hc_medicine,hc.medicine,model_hc_medicine,base.group_user,1,1,1,1
+access_hc_medicine_family,hc.medicine_family,model_hc_medicine_family,base.group_user,1,1,1,1
+access_hc_intake_medicine,hc.intake_medicine,model_hc_intake_medicine,base.group_user,1,1,1,1
+access_hc_facility,hc.facility,model_hc_facility,base.group_user,1,1,1,1
+access_hc_facility_type,hc.facility.type,model_hc_facility_type,base.group_user,1,1,1,1
+access_hc_branch,hc.branch,model_hc_branch,base.group_user,1,1,1,1

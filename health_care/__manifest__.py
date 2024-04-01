@@ -12,6 +12,7 @@
         'security/ir.model.access.csv',
         
         'views/hc_contact_views.xml',
+        'views/hc_contact_relation_views.xml',
         
         'views/hc_patient_views.xml',
         'views/hc_patient_contact_views.xml',
@@ -26,7 +27,13 @@
         'views/hc_visit_type_views.xml',
 
         'views/hc_intake_views.xml',
-        
+        'views/hc_discipline_views.xml',
+  
+        'views/hc_medicine_views.xml',
+        'views/hc_medicine_family_views.xml',
+
+        'views/hc_facility_views.xml',
+
         'views/hc_menuitem.xml',
     ],
     'assets': {

@@ -17,6 +17,7 @@ class HCContact(models.Model):
         ('W', 'White'), ('B', 'Black'), ('M', 'Meztiza')))
     ssn = fields.Char(string='Social Security Number')
     phone = fields.Char()
+    facsimile = fields.Char()
     address = fields.Char()
     city = fields.Char()
     state = fields.Char()
@@ -32,3 +33,18 @@ class HCContact(models.Model):
                     record.age -= 1
             else:
                 record.age = 0
+
+    def button_details(self):
+        view = {
+            'name': 'Edit Contact',
+            'domain': [],
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'hc.contact',
+            'view_id': False,
+            'type': 'ir.actions.act_window',
+            # 'target': 'new',
+            'readonly': True,
+            'res_id': self.id,
+        }
+        return view

@@ -21,9 +21,15 @@
         <menuitem id="menu_hc_visit" name="Visit">
             <menuitem id="menu_hc_visit_view" action="action_hc_visit"/>
         </menuitem>
+        <menuitem id="menu_hc_facility" name="Facility">
+            <menuitem id="menu_hc_facility_view" action="hc_facility_action"/>
+        </menuitem>
+        
         <menuitem id="menu_hc_configuration" name="Configuracion">
             <menuitem id="menu_hc_visit_type_view" action="action_hc_visit_type"/>
+            <menuitem id="menu_hc_contact_relation_view" action="hc_contact_relation_action"/>
+            
+            <menuitem id="menu_hc_discipline_view" action="hc_discipline_action"/>
         </menuitem>
-
     </menuitem>
 </odoo>

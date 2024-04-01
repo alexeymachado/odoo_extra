@@ -16,6 +16,8 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
+                <field name="mrn"/>
+                <field name="hic"/>
                 <field name="first_name"/>
                 <field name="last_name"/>
                 <field name="birth_day"/>
@@ -31,25 +33,28 @@
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
-                    <group string="Generals">
-                        <field name="contact_id"/>"
-                        <field name="name"/>
+                    <group string="Generales">
+                        <field name="contact_id" string="name"/>"
                         <field name="first_name"/>
                         <field name="last_name"/>
+                        <field name="sex"/>
+                        <field name="birth_day"/>
+                        <field name="age"/>
                     </group>
 
-                    <group >
+                    <group>
                         <field name="mrn"/>
                         <field name="hic"/>
                         <field name="resident_type"/>
                     </group>       
 
                     <group string="Contact">  
-
-                        <field name="gender"/>
                         <field name="phone"/>
                         <field name="email"/>
-
+                        <field name="address"/>
+                        <field name="city"/>
+                        <field name="state"/>
+                        <field name="zip_code"/>
                     </group>
  
                      <notebook>

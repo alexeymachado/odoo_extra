@@ -5,5 +5,3 @@ class HCVisitType(models.Model):
     _description='Visit Type'
     name = fields.Char()
     description = fields.Char()
-
-

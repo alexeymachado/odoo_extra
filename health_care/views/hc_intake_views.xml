@@ -17,6 +17,10 @@
                 <tree>
                     <field name="state"/>
                     <field name="patient_id"/>
+                    <field name='note_diagnostic_primary'/>
+                    <field name='note_diagnostic_secondary'/>
+                    <field name='disciplines'/>
+                    <field name='disciplines_frecuencies'/>    
                 </tree>
             </field>
         </record>
@@ -32,10 +36,50 @@
                     </head>
                 
                     <sheet>
-                        <group>
+
+
+                        <group string='Paciente'> 
                             <field name='patient_id'/>
-                            <field name='start_date'/>
                         </group>
+
+                        <group string='Note'>
+                            <field name='note_diagnostic_primary'/>
+                            <field name='note_diagnostic_secondary'/>
+                        </group>
+
+                        <group string='Orden'>
+                            <field name='disciplines'/>
+                            <field name='disciplines_frecuencies'/>
+                        </group>
+                        
+                        <notebook>
+                            <page string="Contacto Emergencia">
+                                <group>
+                                    <field name="contact_ids"/>
+                                </group>
+                            </page>
+
+                            <!-- <page string="Insurance">
+                                <field name="insurance_ids"/>
+                            </page> -->
+
+
+                            <page string="Servicios/Disciplina">
+                                <field name="discipline_ids"/>
+                            </page>
+
+
+                            <page string="Medicinas">
+                                <field name="medicine_ids"/>
+                            </page>
+
+                            <page string="Visitas">
+                                <field name="visit_ids"/>
+                            </page>
+ 
+                        </notebook>    
+
+
                     </sheet>
                 </form>
             </field>

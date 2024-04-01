@@ -9,14 +9,3 @@ class HCPatientInsurance(models.Model):
     insurance_agent_id = fields.Many2one(comodel_name='hc.insurance.agent', required=True, ondelete='cascade')
     insurance_plan_id = fields.Many2one(comodel_name='hc.insurance.plan', required=True, ondelete='cascade')
     
-
-    
-
-
-
-    
-    
-    
-
-
-

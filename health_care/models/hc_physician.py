@@ -14,8 +14,3 @@ class HCPhysician(models.Model):
     state_license_expiration_date = fields.Date()
     state_license_str = fields.Char()
     contact_txt = fields.Char()
-
-
-
-    
-    

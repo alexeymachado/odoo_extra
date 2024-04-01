@@ -13,13 +13,54 @@
             <field name="name">hc.contact.view.tree</field>
             <field name="model">hc.contact</field>
             <field name="arch" type="xml">
-                <tree>
+                <tree editable="top">
                     <field name="name"/>
                     <field name="first_name"/>
                     <field name="last_name"/>
+                    <field name="gender"/>
+                    <field name="sex"/>
+                    <field name="race"/>
                     <field name="birth_day"/>
                     <field name="age"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="address"/>
+                    <field name="city"/>
+                    <field name="state"/>
+                    <field name="zip_code"/>
+                    <button name="button_details" string="Details" type="object"/>
                 </tree>
+            </field>
+        </record>
+
+        <!-- hc_contact form view -->
+        <record id="hc_contact_view_form" model="ir.ui.view">
+            <field name="name">hc_contact_view_form</field>
+            <field name="model">hc.contact</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="gender"/>
+                            <field name="sex"/>
+                            <field name="race"/>
+                            <field name="birth_day"/>
+                            <field name="age"/>
+                        </group>
+                        <group>
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="address"/>
+                            <field name="city"/>
+                            <field name="state"/>
+                            <field name="zip_code"/>
+                        </group>
+
+                    </sheet>
+                </form>
             </field>
         </record>
         

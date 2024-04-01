@@ -11,3 +11,14 @@ from . import hc_insurance_agent
 from . import hc_insurance_plan
 from . import hc_patient_insurance
 from . import hc_patient_import
+from . import hc_discipline
+from . import hc_intake_discipline
+from . import hc_intake_medicine
+from . import hc_medicine
+from . import hc_medicine_family
+from . import hc_facility
+from . import hc_branch
+
+
+
+
