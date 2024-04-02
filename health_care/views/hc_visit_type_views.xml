@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="action_hc_visit_type" model="ir.actions.act_window">
+        <record id="hc_visit_type_action" model="ir.actions.act_window">
             <field name="name">Visit Type</field>
             <field name="res_model">hc.visit.type</field>
             <field name="view_mode">tree,form</field>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="hc_diagnostic_action" model="ir.actions.act_window">
+            <field name="name">Diagnostic</field>
+            <field name="res_model">hc.diagnostic</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+
+    <!-- hc_diagnostic tree view -->
+    <record id="hc_diagnostic_view_tree" model="ir.ui.view">
+        <field name="name">Diagnostic List</field>
+        <field name="model">hc.diagnostic</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- hc_diagnostic form view -->
+    <record id="hc_diagnostic_view_form" model="ir.ui.view">
+        <field name="name">Diagnostic Form</field>
+        <field name="model">hc.diagnostic</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="procedure_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

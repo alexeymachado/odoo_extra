@@ -45,15 +45,12 @@ class HCIntake(models.Model):
     disciplines = fields.Char()
     disciplines_frecuencies = fields.Text()
 
-    medicine_ids = fields.Many2many(
-        comodel_name='hc.medicine', relation='hc_intake_medicine', column1='intake_id', column2='medicine_id')
-    contact_ids = fields.Many2many(
-        comodel_name='hc.contact', relation='hc_intake_contact', column1='intake_id', column2='contact_id')
-    discipline_ids = fields.Many2many(
-        comodel_name='hc.discipline', relation='hc_intake_discipline', column1='intake_id', column2='discipline_id')
-
-    visit_ids = fields.One2many(
-        comodel_name='hc.visit', inverse_name='intake_id')
+    diagnostic_ids= fields.One2many(comodel_name='hc.intake.diagnostic', inverse_name='intake_id')
+    medicine_ids = fields.One2many(comodel_name='hc.intake.medicine', inverse_name='intake_id')
+    discipline_ids = fields.One2many(comodel_name='hc.intake.discipline', inverse_name='intake_id')
+    visit_ids = fields.One2many(comodel_name='hc.visit', inverse_name='intake_id')
 
     physician_id = fields.Many2one(comodel_name='hc.physician')
     case_manager_id = fields.Many2one(comodel_name='hc.contact')
+    limitation_ids = fields.Many2many(comodel_name='hc.limitation')
+

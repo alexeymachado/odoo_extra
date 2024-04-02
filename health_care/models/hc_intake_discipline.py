@@ -6,8 +6,7 @@ class HCIntakeDiscipline(models.Model):
     
     intake_id = fields.Many2one(comodel_name='hc.intake')
     discipline_id = fields.Many2one(comodel_name='hc.discipline')
-    
     frecuencia = fields.Char()
-    duracion = fields.Char()
-    tratamiento = fields.Char()
+    observacion = fields.Char()
+
     

@@ -4,7 +4,7 @@
         
         <!-- hc.contact_relation action window -->
         <record id="hc_contact_relation_action" model="ir.actions.act_window">
-            <field name="name">hc_contact_relation</field>
+            <field name="name">Contact Relation</field>
             <field name="res_model">hc.contact.relation</field>
             <field name="view_mode">tree,form</field>
         </record>

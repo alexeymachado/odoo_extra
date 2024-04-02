@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="action_hc_intake_diagnostic" model="ir.actions.act_window">
+            <field name="name">Intake Diagnostic</field>
+            <field name="res_model">hc.intake.diagnostic</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+
+    <!-- hc_intake_diagnostic tree view -->
+    <record id="hc_intake_diagnostic_view_tree" model="ir.ui.view">
+        <field name="name">hc_intake_diagnostic</field>
+        <field name="model">hc.intake.diagnostic</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="diagnostic_id"/>
+                <field name="observacion"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <!-- hc_intake_diagnostic form view -->
+    <record id="hc_intake_diagnostic_view_form" model="ir.ui.view">
+        <field name="name">hc_intake_diagnostic_form</field>
+        <field name="model">hc.intake.diagnostic</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="diagnostic_id"/>
+                        <field name="observacion"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

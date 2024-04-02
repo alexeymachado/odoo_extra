@@ -2,6 +2,7 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_hc_contact,hc.contact,model_hc_contact,base.group_user,1,1,1,1
 access_hc_contact_relation,hc.contact.relation,model_hc_contact_relation,base.group_user,1,1,1,1
 access_hc_nurse,hc.nurse,model_hc_nurse,base.group_user,1,1,1,1
+access_hc_nurse_category,hc.nurse.category,model_hc_nurse_category,base.group_user,1,1,1,1
 access_hc_patient,hc.patient,model_hc_patient,base.group_user,1,1,1,1
 access_hc_patient_contact,hc.patient.contact,model_hc_patient_contact,base.group_user,1,1,1,1
 access_hc_patient_insurance,hc.patient.insurance,model_hc_patient_insurance,base.group_user,1,1,1,1
@@ -15,8 +16,16 @@ access_hc_insurance_plan,hc.insurance.plan,model_hc_insurance_plan,base.group_us
 access_hc_discipline,hc.discipline,model_hc_discipline,base.group_user,1,1,1,1
 access_hc_intake_discipline,hc.intake.discipline,model_hc_intake_discipline,base.group_user,1,1,1,1
 access_hc_medicine,hc.medicine,model_hc_medicine,base.group_user,1,1,1,1
-access_hc_medicine_family,hc.medicine_family,model_hc_medicine_family,base.group_user,1,1,1,1
-access_hc_intake_medicine,hc.intake_medicine,model_hc_intake_medicine,base.group_user,1,1,1,1
+access_hc_medicine_family,hc.medicine.family,model_hc_medicine_family,base.group_user,1,1,1,1
+access_hc_intake_medicine,hc.intake.medicine,model_hc_intake_medicine,base.group_user,1,1,1,1
 access_hc_facility,hc.facility,model_hc_facility,base.group_user,1,1,1,1
 access_hc_facility_type,hc.facility.type,model_hc_facility_type,base.group_user,1,1,1,1
 access_hc_branch,hc.branch,model_hc_branch,base.group_user,1,1,1,1
+access_hc_limitation,hc.limitation,model_hc_limitation,base.group_user,1,1,1,1
+access_hc_diagnostic,hc.diagnostic,model_hc_diagnostic,base.group_user,1,1,1,1
+access_hc_intake_diagnostic,hc.intake.diagnostic,model_hc_intake_diagnostic,base.group_user,1,1,1,1
+access_hc_procedure,hc.procedure,model_hc_procedure,base.group_user,1,1,1,1
+access_hc_supply,hc.supply,model_hc_supply,base.group_user,1,1,1,1
+access_hc_certification,hc.certification,model_hc_certification,base.group_user,1,1,1,1
+access_hc_nurse_certification,hc.nurse.certification,model_hc_nurse_certification,base.group_user,1,1,1,1
+

@@ -2,17 +2,17 @@
 <odoo>
     <data>
         
-        <!-- hc.discipline action window -->
-        <record id="hc_discipline_action" model="ir.actions.act_window">
-            <field name="name">Discipline</field>
-            <field name="res_model">hc.discipline</field>
+        <!-- hc.limitation action window -->
+        <record id="hc_limitation_action" model="ir.actions.act_window">
+            <field name="name">Limitations</field>
+            <field name="res_model">hc.limitation</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <!-- hc_discipline tree view -->
-        <record id="hc_discipline_view_tree" model="ir.ui.view">
-            <field name="name">hc_discipline_view_tree</field>
-            <field name="model">hc.discipline</field>
+        <!-- hc_limitation tree view -->
+        <record id="hc_limitation_view_tree" model="ir.ui.view">
+            <field name="name">hc_limitation_view_tree</field>
+            <field name="model">hc.limitation</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
@@ -21,10 +21,10 @@
             </field>
         </record>
 
-        <!-- hc_discipline form view -->
-        <record id="hc_discipline_view_form" model="ir.ui.view">
-            <field name="name">hc_discipline_view_form</field>
-            <field name="model">hc.discipline</field>
+        <!-- hc_limitation form view -->
+        <record id="hc_limitation_view_form" model="ir.ui.view">
+            <field name="name">hc_limitation_view_form</field>
+            <field name="model">hc.limitation</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
@@ -36,7 +36,5 @@
                 </form>
             </field>
         </record>
-
-
     </data>
 </odoo>

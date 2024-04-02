@@ -8,7 +8,6 @@ class HCIntakeMedicine(models.Model):
     medicine_id = fields.Many2one(comodel_name='hc.medicine')
     
     frecuencia = fields.Char()
-    duracion = fields.Char()
     dosis = fields.Char()
     observacion = fields.Text()
 

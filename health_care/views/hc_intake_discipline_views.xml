@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="hc_intake_discipline_action" model="ir.actions.act_window">
+            <field name="name">Intake Discipline</field>
+            <field name="res_model">hc.intake.discipline</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+
+    <!-- hc_intake_discipline tree view -->
+    <record id="hc_intake_discipline_view_tree" model="ir.ui.view">
+        <field name="name">Intake Discipline List</field>
+        <field name="model">hc.intake.discipline</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="discipline_id"/>
+                <field name="frecuencia"/>
+                <field name="observacion"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- hc_intake_discipline form view -->
+    <record id="hc_intake_discipline_view_form" model="ir.ui.view">
+        <field name="name">Inatake discipline Form</field>
+        <field name="model">hc.intake.discipline</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="discipline_id"/>
+                        <field name="frecuencia"/>
+                        <field name="observacion"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

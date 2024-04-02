@@ -2,8 +2,8 @@
 <odoo>
 
     <data>
-        <record id="action_hc_medicine" model="ir.actions.act_window">
-            <field name="name">Medicina</field>
+        <record id="hc_medicine_action" model="ir.actions.act_window">
+            <field name="name">Medicine</field>
             <field name="res_model">hc.medicine</field>
             <field name="view_mode">tree,form</field>
         </record>

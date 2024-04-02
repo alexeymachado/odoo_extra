@@ -2,7 +2,7 @@
 <odoo>
     <data>
         
-        <record id="action_hc_patient" model="ir.actions.act_window">
+        <record id="hc_patient_action" model="ir.actions.act_window">
             <field name="name">Patient</field>
             <field name="res_model">hc.patient</field>
             <field name="view_mode">tree,form</field>

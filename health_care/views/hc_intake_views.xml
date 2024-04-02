@@ -50,24 +50,18 @@
                         <group string='Orden'>
                             <field name='disciplines'/>
                             <field name='disciplines_frecuencies'/>
+                            <field name='limitation_ids' widget="many2many_tags" options="{'no_open': False}" />   
                         </group>
                         
                         <notebook>
-                            <page string="Contacto Emergencia">
-                                <group>
-                                    <field name="contact_ids"/>
-                                </group>
+
+                            <page string="Diagnosticos">
+                                <field name="diagnostic_ids"/>
                             </page>
-
-                            <!-- <page string="Insurance">
-                                <field name="insurance_ids"/>
-                            </page> -->
-
 
                             <page string="Servicios/Disciplina">
                                 <field name="discipline_ids"/>
                             </page>
-
 
                             <page string="Medicinas">
                                 <field name="medicine_ids"/>

@@ -9,27 +9,31 @@
             <menuitem id="menu_hc_contact_view" action="hc_contact_action"/>
         </menuitem>
         <menuitem id="menu_hc_patient" name="Patient">
-            <menuitem id="menu_hc_patient_view" action="action_hc_patient"/>
+            <menuitem id="menu_hc_patient_view" action="hc_patient_action"/>
             <menuitem  id="hc_patient_import_menu" action="hc_patient_import_action"/>
         </menuitem>
         <menuitem id="menu_hc_physician" name="Physician">
-            <menuitem id="menu_hc_physician_view" action="action_hc_physician"/>
+            <menuitem id="menu_hc_physician_view" action="hc_physician_action"/>
         </menuitem>
         <menuitem id="menu_hc_nurse" name="Nurse">
-            <menuitem id="menu_hc_nurse_view" action="action_hc_nurse"/>
+            <menuitem id="menu_hc_nurse_view" action="hc_nurse_action"/>
         </menuitem>
         <menuitem id="menu_hc_visit" name="Visit">
-            <menuitem id="menu_hc_visit_view" action="action_hc_visit"/>
+            <menuitem id="menu_hc_visit_view" action="hc_visit_action"/>
         </menuitem>
         <menuitem id="menu_hc_facility" name="Facility">
             <menuitem id="menu_hc_facility_view" action="hc_facility_action"/>
         </menuitem>
         
         <menuitem id="menu_hc_configuration" name="Configuracion">
-            <menuitem id="menu_hc_visit_type_view" action="action_hc_visit_type"/>
+            <menuitem id="menu_hc_nurse_category_view" action="hc_nurse_category_action"/>
+            <menuitem id="menu_hc_medicine_view" action="hc_medicine_action"/>
+            <menuitem id="menu_hc_medicine_family_view" action="hc_medicine_family_action"/>
+            <menuitem id="menu_hc_visit_type_view" action="hc_visit_type_action"/>
             <menuitem id="menu_hc_contact_relation_view" action="hc_contact_relation_action"/>
-            
             <menuitem id="menu_hc_discipline_view" action="hc_discipline_action"/>
+            <menuitem id="menu_hc_diagnostic_view" action="hc_diagnostic_action"/>
+            <menuitem id="menu_hc_certification_view" action="hc_certification_action"/>
         </menuitem>
     </menuitem>
 </odoo>

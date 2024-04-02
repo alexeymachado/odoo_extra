@@ -10,6 +10,8 @@ from datetime import datetime
 class HCPatientImport(models.TransientModel):
 
     _name = "hc.patient.import"
+    _description = 'Patient Import'
+
     file = fields.Binary(string="File", required=True)
 
 

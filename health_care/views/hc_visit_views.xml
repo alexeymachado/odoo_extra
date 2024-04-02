@@ -2,7 +2,7 @@
 <odoo>
 
     <data>
-        <record id="action_hc_visit" model="ir.actions.act_window">
+        <record id="hc_visit_action" model="ir.actions.act_window">
             <field name="name">Visit</field>
             <field name="res_model">hc.visit</field>
             <field name="view_mode">tree,form</field>
@@ -26,7 +26,7 @@
         <field name="name">hc_visit.view.form</field>
         <field name="model">hc.visit</field>
         <field name="arch" type="xml">
-            <form string="">
+            <form>
                 <sheet>
                     <group>
                         <field name="type_id" options="{'no_create': True, 'no_open': True}" />

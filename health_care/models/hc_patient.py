@@ -18,5 +18,5 @@ class HCPatient(models.Model):
 
     resident_type = fields.Char()
 
-    contact_ids = fields.One2many(comodel_name='hc.patient.contact', inverse_name='patient_id')
+    contact_ids = fields.One2many(string='Contactos', comodel_name='hc.patient.contact', inverse_name='patient_id')
     insurance_ids = fields.One2many(comodel_name='hc.patient.insurance', inverse_name='patient_id')

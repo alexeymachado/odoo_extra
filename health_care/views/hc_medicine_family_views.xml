@@ -2,7 +2,7 @@
 <odoo>
 
     <data>
-        <record id="action_hc_medicine_family" model="ir.actions.act_window">
+        <record id="hc_medicine_family_action" model="ir.actions.act_window">
             <field name="name">Medicine Family</field>
             <field name="res_model">hc.medicine.family</field>
             <field name="view_mode">tree,form</field>
@@ -20,9 +20,9 @@
         </field>
     </record>
 
-    <!-- hc_visit form view -->
+    <!-- hc_medicine_family form view -->
     <record id="hc_medicine_family_view_form" model="ir.ui.view">
-        <field name="name">hc_medicine_family_view_form</field>
+        <field name="name">Medicine Family</field>
         <field name="model">hc.medicine.family</field>
         <field name="arch" type="xml">
             <form string="">

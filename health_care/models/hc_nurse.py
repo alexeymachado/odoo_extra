@@ -7,3 +7,9 @@ class HCNurse(models.Model):
     _inherits={'hc.contact':'contact_id'}
 
     contact_id = fields.Many2one(comodel_name='hc.contact', required=True, ondelete='cascade')
+
+    category_id = fields.Many2one(comodel_name='hc.nurse.category')
+
+    
+    
+
