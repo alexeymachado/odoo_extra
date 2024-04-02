@@ -34,6 +34,13 @@
                             <field name="last_name"/>
                             <field name="category_id"/>
                         </group>
+                        <notebook>
+                            <page string="Certifications" name="">
+                                <group>
+                                    <field name="certification_ids"/>
+                                </group>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>

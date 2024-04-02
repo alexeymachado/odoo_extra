@@ -10,6 +10,8 @@ class HCNurse(models.Model):
 
     category_id = fields.Many2one(comodel_name='hc.nurse.category')
 
+    certification_ids = fields.One2many(comodel_name='hc.nurse.certification', inverse_name='nurse_id')
+
     
     
 
