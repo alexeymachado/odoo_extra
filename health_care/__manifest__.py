@@ -9,6 +9,8 @@
     'category': '',
     'depends': ['base', 'web'],
     'data': [ 
+        'data/hc.facility.type.csv',
+        
         'security/ir.model.access.csv',
         
         'views/hc_contact_views.xml',
@@ -45,6 +47,7 @@
 
 
         'views/hc_facility_views.xml',
+        'views/hc_facility_type_views.xml',
         'views/hc_limitation_views.xml',
 
         'views/hc_menuitem.xml',

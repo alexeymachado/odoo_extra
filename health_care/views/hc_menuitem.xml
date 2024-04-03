@@ -34,6 +34,7 @@
             <menuitem id="menu_hc_discipline_view" action="hc_discipline_action"/>
             <menuitem id="menu_hc_diagnostic_view" action="hc_diagnostic_action"/>
             <menuitem id="menu_hc_certification_view" action="hc_certification_action"/>
+            <menuitem id="menu_hc_facility_type_view" action="hc_facility_type_action"/>
         </menuitem>
     </menuitem>
 </odoo>

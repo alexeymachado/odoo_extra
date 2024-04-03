@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <record id="hc_facility_type_action" model="ir.actions.act_window">
+            <field name="name">Facility Type</field>
+            <field name="res_model">hc.facility.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+
+    <!-- hc.facility.type tree view -->
+    <record id="hc_facility_type_view_tree" model="ir.ui.view">
+        <field name="name">Facility Type List</field>
+        <field name="model">hc.facility.type</field>
+         <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- hc.facility.type form view -->
+    <record id="hc_facility_type_view_form" model="ir.ui.view">
+        <field name="name">Facility Type Form</field>
+        <field name="model">hc.facility.type</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
