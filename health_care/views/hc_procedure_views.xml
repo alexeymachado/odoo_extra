@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- hc_procedure action window -->
+    <record id="hc_procedure_action" model="ir.actions.act_window">
+        <field name="name">Procedure Action</field>
+        <field name="res_model">hc.procedure</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- hc_procedure tree view -->
+    <record id="hc_procedure_view_tree" model="ir.ui.view">
+        <field name="name">hc_.rocedure.view.tree</field>
+        <field name="model">hc.procedure</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!-- hc_procedure form view -->
+    <record id="hc_procedure_view_form" model="ir.ui.view">
+        <field name="name">hc.procedure.view.form</field>
+        <field name="model">hc.procedure</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="procedure"/>
+                    </group>
+                    <notebook>
+                        <page string="Supplies">
+                            <field name="supply_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

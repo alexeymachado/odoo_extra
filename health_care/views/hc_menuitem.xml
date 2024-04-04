@@ -1,40 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <menuitem id="menu_hc" name="Health Care">
-        <menuitem id="menu_hc_intake" name="Intake">
-            <menuitem id="menu_hc_intake_view" action="hc_intake_action"/>
+    <menuitem id="hc_menu_root" name="Health Care">
+        
+        <menuitem id="hc_intake_menu_act" name="Intake" action="hc_intake_action" sequence="1"/>    
+
+        <menuitem id="hc_patient_menu_categ" name="Patient" sequence="2">
+            <menuitem id="hc_patient_menu_act" action="hc_patient_action" sequence="1"/>
+            <menuitem  id="hc_patient_import_menu_act" action="hc_patient_import_action" sequence="2"/>
         </menuitem>
 
-        <menuitem id="menu_hc_contact" name="Contact">
-            <menuitem id="menu_hc_contact_view" action="hc_contact_action"/>
-        </menuitem>
-        <menuitem id="menu_hc_patient" name="Patient">
-            <menuitem id="menu_hc_patient_view" action="hc_patient_action"/>
-            <menuitem  id="hc_patient_import_menu" action="hc_patient_import_action"/>
-        </menuitem>
-        <menuitem id="menu_hc_physician" name="Physician">
-            <menuitem id="menu_hc_physician_view" action="hc_physician_action"/>
-        </menuitem>
-        <menuitem id="menu_hc_nurse" name="Nurse">
-            <menuitem id="menu_hc_nurse_view" action="hc_nurse_action"/>
-        </menuitem>
-        <menuitem id="menu_hc_visit" name="Visit">
-            <menuitem id="menu_hc_visit_view" action="hc_visit_action"/>
-        </menuitem>
-        <menuitem id="menu_hc_facility" name="Facility">
-            <menuitem id="menu_hc_facility_view" action="hc_facility_action"/>
-        </menuitem>
+        <menuitem id="hc_nurse_menu_act" action="hc_nurse_action" sequence="3"/>
+        <menuitem id="hc_physician_menu_act" action="hc_physician_action" sequence="4"/>
+
+        <menuitem id="hc_contact_menu_act" action="hc_contact_action" sequence="5"/>    
+
+        <menuitem id="hc_visit_menu_act" action="hc_visit_action" sequence="6"/>
         
-        <menuitem id="menu_hc_configuration" name="Configuracion">
-            <menuitem id="menu_hc_nurse_category_view" action="hc_nurse_category_action"/>
-            <menuitem id="menu_hc_medicine_view" action="hc_medicine_action"/>
-            <menuitem id="menu_hc_medicine_family_view" action="hc_medicine_family_action"/>
-            <menuitem id="menu_hc_visit_type_view" action="hc_visit_type_action"/>
-            <menuitem id="menu_hc_contact_relation_view" action="hc_contact_relation_action"/>
-            <menuitem id="menu_hc_discipline_view" action="hc_discipline_action"/>
-            <menuitem id="menu_hc_diagnostic_view" action="hc_diagnostic_action"/>
-            <menuitem id="menu_hc_certification_view" action="hc_certification_action"/>
-            <menuitem id="menu_hc_facility_type_view" action="hc_facility_type_action"/>
+         
+        <menuitem id="hc_configuration_menu_categ" name="Configuracion" sequence="10">
+            <menuitem id="hc_medicine_menu_act" action="hc_medicine_action" sequence="1"/>
+            <menuitem id="hc_medicine_family_menu_act" action="hc_medicine_family_action" sequence="2"/>
+
+            <menuitem id="hc_facility_menu_act" action="hc_facility_action" sequence="3"/>
+            <menuitem id="hc_facility_type_menu_act" action="hc_facility_type_action" sequence="4"/>
+
+            <menuitem id="hc_nurse_category_menu_act" action="hc_nurse_category_action"/>
+            
+            <menuitem id="hc_visit_type_menu_act" action="hc_visit_type_action"/>
+
+            <menuitem id="hc_contact_relation_menu_act" action="hc_contact_relation_action"/>
+
+            <menuitem id="hc_discipline_menu_act" action="hc_discipline_action"/>
+
+            <menuitem id="hc_diagnostic_menu_act" action="hc_diagnostic_action"/>
+
+            <menuitem id="hc_certification_menu_act" action="hc_certification_action"/>
+   
+            <menuitem id="hc_supply_menu_act" action="hc_supply_action"/>
+
+            <menuitem id="hc_procedure_menu_act" action="hc_procedure_action"/>
         </menuitem>
     </menuitem>
 </odoo>

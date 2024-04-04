@@ -36,9 +36,7 @@
                         </group>
                         <notebook>
                             <page string="Certifications" name="">
-                                <group>
-                                    <field name="certification_ids"/>
-                                </group>
+                                <field name="certification_ids"/>
                             </page>
                         </notebook>
                     </sheet>

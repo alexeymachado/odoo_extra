@@ -37,7 +37,6 @@
 
         'views/hc_intake_views.xml',
  
-
         'views/hc_discipline_views.xml',
         'views/hc_diagnostic_views.xml',
         
@@ -45,10 +44,12 @@
         'views/hc_intake_medicine_views.xml',
         'views/hc_intake_discipline_views.xml',
 
-
         'views/hc_facility_views.xml',
         'views/hc_facility_type_views.xml',
         'views/hc_limitation_views.xml',
+
+        'views/hc_supply_views.xml',
+        'views/hc_procedure_views.xml',
 
         'views/hc_menuitem.xml',
     ],

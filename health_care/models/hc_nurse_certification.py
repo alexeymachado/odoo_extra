@@ -11,6 +11,9 @@ class HCNurseCertification(models.Model):
     
     emit_date=fields.Date()
     expiration_date = fields.Date()
+    file_binary = fields.Binary()
+    file_name = fields.Char()
     observation = fields.Text()
+
     
 
