@@ -38,65 +38,87 @@
             <field name="model">hc.intake</field>
             <field name="arch" type="xml">
                 <form string="Intake">
-                    <head>
-                        <field name='state' widget="statusbar"/>
-                    </head>
+                    <header>
+                        <field name='state' widget='statusbar'/>
+                    </header>
                 
                     <sheet>
-                        <group string='General'> 
+                        <group>
+                            <field name="state"/>
                             <field name="start_date"/>
-                            <field name="end_date"/>
-
-                            <field name="no_admit_reason"/>
-                        </group>
-
-                        <group string='Estado 1'>
+                            <field name="end_date" invisible="state!='finished'"/>
+                            <field name="no_admit_reason" invisible="state!='no_admit'"/>
                             <field name="referral_id"/>
-                            
-                            <field name='patient_id'/>
-                            
-                            <field name="facility_id"/>
-                            <field name="facility_admit_date"/>
-                            <field name="facility_discharge_date"/>
                         </group>
 
-                        <group string="Estado 2">
+                        <group>
+                            <group string="Patient"> 
+                                <field name='patient_id' string='Name'/>
+                                <field name='pat_address'/>
+                                <field name='pat_city'/>
+                                <field name='pat_state'/>
+                                <field name='pat_zip_code'/>
+                            </group>
+
+                            <group string="Facility">
+                                <field name="facility_id" string='name'/>
+                                <field name="facility_admit_date" string='Admit Date'/>
+                                <field name="facility_discharge_date" string='Discharge Date'/>
+                            </group>
+                        </group>    
+   
+                        <group string="Documents">
                       
-                            <field name="physician_id"/>
+                            <group>
+                                <field name="physician_id"/>
+                            </group>
+
+                            <newline/>
              
-                            <field name="note_emited_date"/>
-                            <field name="note_received_date"/>
-                            <field name="note_observation"/>
-                            <field name="note_file_binary" filename="note_file_name" widget="binary"/>
-                            <field name="note_file_name" invisible="1"/>
-    
-                            <field name="order_emited_date"/>
-                            <field name="order_received_date"/>
-                            <field name="order_observation"/>
-                            <field name="order_file_binary" filename="order_file_name" widget="binary"/>
-                            <field name="order_file_name" invisible="1"/>
+                            <group string="Medical Note">
+                                <field name="note_emited_date" string="Emited Date"/>
+                                <field name="note_received_date" string="Received Date"/>
+                                <field name="note_observation" string="Observation"/>
+                                <field name="note_file_binary" string="File" filename="note_file_name" widget="binary"/>
+                                <field name="note_file_name" invisible="1"/>
+                            </group>
 
-                            <field name="insurance_agent_id"/>
-                            <field name="insurance_plan_id"/>
-                            <field name="insurance_number"/>
-                            <field name="insurance_aproved"/>
-                        </group>
+                            <group string="Medical Order">
+                                <field name="order_emited_date" string="Emitd Date"/>
+                                <field name="order_received_date" string="Received Date"/>
+                                <field name="order_observation" string="Observation"/>
+                                <field name="order_file_binary" string="File" filename="order_file_name" widget="binary"/>
+                                <field name="order_file_name" invisible="1"/>
+                            </group>    
 
-                        <group string='Estado 3'>
+                            <group string="Insurance">
+                                <field name="insurance_agent_id" String="Agency"/>
+                                <field name="insurance_plan_id" string="Plan"/>
+                                <field name="insurance_number" string="Number Id"/>
+                                <field name="insurance_aproved" string="Aproved"/>
+                            </group>
 
+                         </group>   
 
-                            <field name='flags_ids' widget="many2many_tags"/>
-                            <field name='functional_limitation_ids' widget="many2many_tags" options="{'no_open': False}" />  
-                            <field name='activities_permitted' widget="many2many_tags"/> 
-                            <field name="weight_bearing"/>
-                            <field name="assistive_device"/>
-                                                        
-                            <field name="diets"/>
-                            <field name="allergies"/>
-                            
-                            <field name="health_care_reason"/>
-                            <field name="homebound_reason"/>
-                            <field name="estimated_len_of_stay"/>
+                        <group string='Details'>
+
+                            <group>
+                                <field name="health_care_reason"/>
+                                <field name="homebound_reason"/>
+                                <field name="estimated_len_of_stay"/>
+                                <separator/>
+                                <field name="diets"/>
+                                <field name="allergies"/>
+                            </group>
+
+                            <group>
+                                <field name='flags_ids' widget="many2many_tags"/>
+                                <field name='functional_limitation_ids' widget="many2many_tags" options="{'no_open': False}" />  
+                                <field name='activities_permitted' widget="many2many_tags"/> 
+                                <field name="weight_bearing"/>
+                                <field name="assistive_device"/>
+                            </group>
+
                         </group>
                         
                         <notebook>

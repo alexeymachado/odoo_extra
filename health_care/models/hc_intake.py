@@ -7,7 +7,7 @@ class HCIntake(models.Model):
 
     
     state = fields.Selection(selection=[('new', 'New'), ('wait_doc', 'Wait Documentation'), (
-        'no_admit', 'NO Admit'), ('admit', 'Admit'), ('finished', 'Finished')], default='new')
+        'no_admit', 'No Admit'), ('admit', 'Admit'), ('finished', 'Finished')], default='new')
 
     start_date = fields.Date()
     end_date = fields.Date()
@@ -16,6 +16,11 @@ class HCIntake(models.Model):
     referral_id = fields.Many2one(comodel_name='hc.contact')
 
     patient_id = fields.Many2one(comodel_name='hc.patient')
+    pat_address = fields.Char(related='patient_id.address', string="Address")
+    pat_city = fields.Char(related='patient_id.city', string="City")
+    pat_state = fields.Char(related='patient_id.state', string="State")
+    pat_zip_code = fields.Char(related='patient_id.zip_code', string="Zip Code")
+    
 
     facility_id = fields.Many2one(comodel_name='hc.facility')
     facility_admit_date = fields.Date()
@@ -55,13 +60,11 @@ class HCIntake(models.Model):
 
     laboratory_work = fields.Char()
     laboratory_frequency = fields.Char()
-    
-    
+        
     diagnostic_ids= fields.One2many(comodel_name='hc.intake.diagnostic', inverse_name='intake_id')
     discipline_ids = fields.One2many(comodel_name='hc.intake.discipline', inverse_name='intake_id')
     medicine_ids = fields.One2many(comodel_name='hc.intake.medicine', inverse_name='intake_id')
     visit_ids = fields.One2many(comodel_name='hc.visit', inverse_name='intake_id')
-
 
     health_care_reason = fields.Char()
     homebound_reason = fields.Char()
