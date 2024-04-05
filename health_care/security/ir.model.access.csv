@@ -21,11 +21,13 @@ access_hc_intake_medicine,hc.intake.medicine,model_hc_intake_medicine,base.group
 access_hc_facility,hc.facility,model_hc_facility,base.group_user,1,1,1,1
 access_hc_facility_type,hc.facility.type,model_hc_facility_type,base.group_user,1,1,1,1
 access_hc_branch,hc.branch,model_hc_branch,base.group_user,1,1,1,1
-access_hc_limitation,hc.limitation,model_hc_limitation,base.group_user,1,1,1,1
+access_hc_functional_limitation,hc.functional.limitation,model_hc_functional_limitation,base.group_user,1,1,1,1
 access_hc_diagnostic,hc.diagnostic,model_hc_diagnostic,base.group_user,1,1,1,1
 access_hc_intake_diagnostic,hc.intake.diagnostic,model_hc_intake_diagnostic,base.group_user,1,1,1,1
 access_hc_procedure,hc.procedure,model_hc_procedure,base.group_user,1,1,1,1
 access_hc_supply,hc.supply,model_hc_supply,base.group_user,1,1,1,1
 access_hc_certification,hc.certification,model_hc_certification,base.group_user,1,1,1,1
 access_hc_nurse_certification,hc.nurse.certification,model_hc_nurse_certification,base.group_user,1,1,1,1
+access_hc_flags,hc.flags,model_hc_flags,base.group_user,1,1,1,1
+access_hc_activities_permitted,hc.activities.permitted,model_hc_activities_permitted,base.group_user,1,1,1,1
 

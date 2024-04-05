@@ -16,9 +16,9 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="medicine_id"/>
-                <field name="frecuencia"/>
-                <field name="dosis"/>
-                <field name="observacion"/>
+                <field name="frequency"/>
+                <field name="dose"/>
+                <field name="observation"/>
             </tree>
         </field>
     </record>
@@ -32,9 +32,9 @@
                 <sheet>
                     <group>
                         <field name="medicine_id"/>
-                        <field name="frecuencia"/>
-                        <field name="dosis"/>
-                        <field name="observacion"/>
+                        <field name="frequency"/>
+                        <field name="dose"/>
+                        <field name="observation"/>
                     </group>
                 </sheet>
             </form>

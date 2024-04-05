@@ -3,16 +3,16 @@
     <data>
         
         <!-- hc.limitation action window -->
-        <record id="hc_limitation_action" model="ir.actions.act_window">
-            <field name="name">Limitations</field>
-            <field name="res_model">hc.limitation</field>
+        <record id="hc_functional_limitation_action" model="ir.actions.act_window">
+            <field name="name">Functional Limitations</field>
+            <field name="res_model">hc.functional.limitation</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <!-- hc_limitation tree view -->
-        <record id="hc_limitation_view_tree" model="ir.ui.view">
-            <field name="name">hc_limitation_view_tree</field>
-            <field name="model">hc.limitation</field>
+        <record id="hc_functional_limitation_view_tree" model="ir.ui.view">
+            <field name="name">hc_functional_limitation_view_tree</field>
+            <field name="model">hc.functional.limitation</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
@@ -21,10 +21,10 @@
             </field>
         </record>
 
-        <!-- hc_limitation form view -->
-        <record id="hc_limitation_view_form" model="ir.ui.view">
-            <field name="name">hc_limitation_view_form</field>
-            <field name="model">hc.limitation</field>
+        <!-- hc_functional_limitation form view -->
+        <record id="hc_functional_limitation_view_form" model="ir.ui.view">
+            <field name="name">hc_functional_limitation_view_form</field>
+            <field name="model">hc.functional.limitation</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>

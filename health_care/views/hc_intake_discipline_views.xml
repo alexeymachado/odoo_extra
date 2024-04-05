@@ -16,8 +16,8 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="discipline_id"/>
-                <field name="frecuencia"/>
-                <field name="observacion"/>
+                <field name="frequency"/>
+                <field name="observation"/>
             </tree>
         </field>
     </record>
@@ -31,8 +31,8 @@
                 <sheet>
                     <group>
                         <field name="discipline_id"/>
-                        <field name="frecuencia"/>
-                        <field name="observacion"/>
+                        <field name="frequency"/>
+                        <field name="observation"/>
                     </group>
                 </sheet>
             </form>

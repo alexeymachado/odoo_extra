@@ -22,10 +22,14 @@ from . import hc_medicine
 from . import hc_medicine_family
 from . import hc_facility
 from . import hc_branch
-from . import hc_limitation
+from . import hc_functional_limitation
 from . import hc_diagnostic
 from . import hc_procedure
 from . import hc_supply
+from . import hc_flags
+from . import hc_activities_permitted
+
+
 
 
 

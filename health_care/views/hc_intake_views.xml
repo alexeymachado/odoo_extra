@@ -16,11 +16,18 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="state"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    
                     <field name="patient_id"/>
-                    <field name='note_diagnostic_primary'/>
-                    <field name='note_diagnostic_secondary'/>
-                    <field name='disciplines'/>
-                    <field name='disciplines_frecuencies'/>    
+                    <field name="referral_id"/>
+                    <field name="facility_id"/>
+                    <field name="physician_id"/>
+                    <field name="note_emited_date"/>
+                    <field name="order_emited_date"/>
+                    <field name="no_admit_reason"/>
+                    <field name="health_care_reason"/>
+                    <field name="homebound_reason"/>
                 </tree>
             </field>
         </record>
@@ -30,27 +37,66 @@
             <field name="name">hc_intake_view_form</field>
             <field name="model">hc.intake</field>
             <field name="arch" type="xml">
-                <form string="">
+                <form string="Intake">
                     <head>
                         <field name='state' widget="statusbar"/>
                     </head>
                 
                     <sheet>
+                        <group string='General'> 
+                            <field name="start_date"/>
+                            <field name="end_date"/>
 
+                            <field name="no_admit_reason"/>
+                        </group>
 
-                        <group string='Paciente'> 
+                        <group string='Estado 1'>
+                            <field name="referral_id"/>
+                            
                             <field name='patient_id'/>
+                            
+                            <field name="facility_id"/>
+                            <field name="facility_admit_date"/>
+                            <field name="facility_discharge_date"/>
                         </group>
 
-                        <group string='Note'>
-                            <field name='note_diagnostic_primary'/>
-                            <field name='note_diagnostic_secondary'/>
+                        <group string="Estado 2">
+                      
+                            <field name="physician_id"/>
+             
+                            <field name="note_emited_date"/>
+                            <field name="note_received_date"/>
+                            <field name="note_observation"/>
+                            <field name="note_file_binary" filename="note_file_name" widget="binary"/>
+                            <field name="note_file_name" invisible="1"/>
+    
+                            <field name="order_emited_date"/>
+                            <field name="order_received_date"/>
+                            <field name="order_observation"/>
+                            <field name="order_file_binary" filename="order_file_name" widget="binary"/>
+                            <field name="order_file_name" invisible="1"/>
+
+                            <field name="insurance_agent_id"/>
+                            <field name="insurance_plan_id"/>
+                            <field name="insurance_number"/>
+                            <field name="insurance_aproved"/>
                         </group>
 
-                        <group string='Orden'>
-                            <field name='disciplines'/>
-                            <field name='disciplines_frecuencies'/>
-                            <field name='limitation_ids' widget="many2many_tags" options="{'no_open': False}" />   
+                        <group string='Estado 3'>
+
+
+                            <field name='flags_ids' widget="many2many_tags"/>
+                            <field name='functional_limitation_ids' widget="many2many_tags" options="{'no_open': False}" />  
+                            <field name='activities_permitted' widget="many2many_tags"/> 
+                            <field name="weight_bearing"/>
+                            <field name="assistive_device"/>
+                                                        
+                            <field name="diets"/>
+                            <field name="allergies"/>
+                            
+                            <field name="health_care_reason"/>
+                            <field name="homebound_reason"/>
+                            <field name="estimated_len_of_stay"/>
                         </group>
                         
                         <notebook>
@@ -72,8 +118,6 @@
                             </page>
  
                         </notebook>    
-
-
                     </sheet>
                 </form>
             </field>

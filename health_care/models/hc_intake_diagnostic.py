@@ -8,4 +8,4 @@ class HCIntakeDiagnostic(models.Model):
 
     intake_id = fields.Many2one(comodel_name='hc.intake')
     diagnostic_id = fields.Many2one(comodel_name='hc.diagnostic')
-    observacion = fields.Text()
+    observation = fields.Text()

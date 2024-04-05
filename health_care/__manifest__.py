@@ -10,6 +10,9 @@
     'depends': ['base', 'web'],
     'data': [ 
         'data/hc.facility.type.csv',
+        'data/hc.activities.permitted.csv',
+        'data/hc.flags.csv',
+        'data/hc.functional.limitation.csv',
         
         'security/ir.model.access.csv',
         
@@ -46,7 +49,7 @@
 
         'views/hc_facility_views.xml',
         'views/hc_facility_type_views.xml',
-        'views/hc_limitation_views.xml',
+        'views/hc_functional_limitation_views.xml',
 
         'views/hc_supply_views.xml',
         'views/hc_procedure_views.xml',
