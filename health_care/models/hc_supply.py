@@ -7,3 +7,7 @@ class HCSupply(models.Model):
 
     name = fields.Char()
     description = fields.Text()
+
+    def create(self, vals_list):
+        print('Estoy aqui')
+        return super().create(vals_list)

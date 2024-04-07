@@ -8,15 +8,18 @@ class HCIntakeProcedure(models.Model):
     intake_id = fields.Many2one(comodel_name='hc.intake')
     procedure_id = fields.Many2one(comodel_name='hc.procedure')
 
+    @api.model
     def create(self, vals_list):
         intake_procedure = super().create(vals_list)
+
+        print('Estoy aqui')
         
-        for supply in self.procedure_id.supply_ids:
-            if not self.env['hc.intake_supply'].search([('intake_id','=',self.intake_id),('supply_id', '=', supply.id)]):
-                intake_supply = self.env['hc.intake_supply'].create({
-                    'intake_id': self.intake_id,
-                    'supply_id': supply.id
-                })
+        # for supply in self.procedure_id.supply_ids:
+        #     if not self.env['hc.intake.suply'].search([('intake_id','=',self.intake_id),('supply_id', '=', supply.id)]):
+        #         intake_supply = self.env['hc.intake_supply'].create({
+        #             'intake_id': self.intake_id,
+        #             'supply_id': supply.id
+        #         })
         
         return intake_procedure            
 
