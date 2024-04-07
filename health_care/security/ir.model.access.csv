@@ -31,3 +31,4 @@ access_hc_nurse_certification,hc.nurse.certification,model_hc_nurse_certificatio
 access_hc_flags,hc.flags,model_hc_flags,base.group_user,1,1,1,1
 access_hc_activities_permitted,hc.activities.permitted,model_hc_activities_permitted,base.group_user,1,1,1,1
 access_hc_not_admitted_reason,hc.not.admitted.reason,model_hc_not_admitted_reason,base.group_user,1,1,1,1
+access_hc_intake_procedure,hc.intake.procedure,model_hc_intake_procedure,base.group_user,1,1,1,1
