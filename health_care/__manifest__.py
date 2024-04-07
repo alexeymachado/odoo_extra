@@ -13,6 +13,7 @@
         'data/hc.activities.permitted.csv',
         'data/hc.flags.csv',
         'data/hc.functional.limitation.csv',
+        'data/hc.not.admitted.reason.csv',
         
         'security/ir.model.access.csv',
         
@@ -53,7 +54,7 @@
 
         'views/hc_supply_views.xml',
         'views/hc_procedure_views.xml',
-
+   
         'views/hc_menuitem.xml',
     ],
     'assets': {

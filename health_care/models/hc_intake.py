@@ -6,12 +6,12 @@ class HCIntake(models.Model):
     _description = 'Intake'
 
     
-    state = fields.Selection(selection=[('new', 'New'), ('wait_doc', 'Wait Documentation'), (
-        'no_admit', 'No Admit'), ('admit', 'Admit'), ('finished', 'Finished')], default='new')
+    state = fields.Selection(selection=[('required', 'Required'), ('wait_doc', 'Waiting for Documentation'), 
+        ('not_admitted', 'Not Admitted'), ('admitted', 'Admitted'), ('finished', 'Finished')], default='required')
 
     start_date = fields.Date()
     end_date = fields.Date()
-    no_admit_reason = fields.Char()
+    not_admitted_reason_id = fields.Many2one(comodel_name='hc.not.admitted.reason')
 
     referral_id = fields.Many2one(comodel_name='hc.contact')
 
@@ -35,13 +35,13 @@ class HCIntake(models.Model):
 
     note_file_binary = fields.Binary()
     note_file_name = fields.Char()
-    note_emited_date = fields.Date()
+    note_emitted_date = fields.Date()
     note_received_date = fields.Date()
     note_observation = fields.Text()
 
     order_file_binary = fields.Binary()
     order_file_name = fields.Char()
-    order_emited_date = fields.Date()
+    order_emitted_date = fields.Date()
     order_received_date = fields.Date()
     order_observation = fields.Text()
     
@@ -65,6 +65,8 @@ class HCIntake(models.Model):
     discipline_ids = fields.One2many(comodel_name='hc.intake.discipline', inverse_name='intake_id')
     medicine_ids = fields.One2many(comodel_name='hc.intake.medicine', inverse_name='intake_id')
     visit_ids = fields.One2many(comodel_name='hc.visit', inverse_name='intake_id')
+    procedure_ids = fields.Many2many(comodel_name='hc.procedure')
+    supply_ids=fields.Many2many(comodel_name='hc.supply')
 
     health_care_reason = fields.Char()
     homebound_reason = fields.Char()
@@ -74,6 +76,18 @@ class HCIntake(models.Model):
     nurse_id = fields.Many2one (comodel_name='hc.nurse')
 
     start_care_date = fields.Date()
+
+    def set_wait_doc(self):
+        self.write({'state':"wait_doc"})
+
+    def set_no_admit(self):
+        self.write({'state':"not_admitted"})  
+
+    def set_admit(self):
+        self.write({'state':"admitted"})
+
+    def set_finish(self):
+        self.write({'state':"finished"})              
 
     
 
