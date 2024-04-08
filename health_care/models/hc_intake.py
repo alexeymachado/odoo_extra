@@ -9,7 +9,7 @@ class HCIntake(models.Model):
     state = fields.Selection(selection=[('required', 'Required'), ('wait_doc', 'Waiting for Documentation'), 
         ('not_admitted', 'Not Admitted'), ('admitted', 'Admitted'), ('finished', 'Finished')], default='required')
 
-    start_date = fields.Date()
+    start_date = fields.Date(default=fields.Date.today())
     end_date = fields.Date()
     not_admitted_reason_id = fields.Many2one(comodel_name='hc.not.admitted.reason')
 
@@ -33,15 +33,15 @@ class HCIntake(models.Model):
 
     physician_id = fields.Many2one(comodel_name='hc.physician')
 
+    note_received_date = fields.Date(default=fields.Date.today())
     note_file_binary = fields.Binary()
     note_file_name = fields.Char()
     note_emitted_date = fields.Date()
-    note_received_date = fields.Date()
     note_observation = fields.Text()
 
+    order_emitted_date = fields.Date(default=fields.Date.today())
     order_file_binary = fields.Binary()
     order_file_name = fields.Char()
-    order_emitted_date = fields.Date()
     order_received_date = fields.Date()
     order_observation = fields.Text()
     

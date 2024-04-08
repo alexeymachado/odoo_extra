@@ -79,7 +79,7 @@
    
                         <notebook>
 
-                            <page string='Medical Note/Order' invisible="state in ['required']">
+                            <page string='Medical Note/Order' invisible="(state =='required') or (state=='not_admiteed' and not physician_id)">
                                 
                                 <group>
                                     <field name="physician_id"/>
@@ -87,16 +87,16 @@
                                 
                                 <group>
                                     <group string="Medical Note">
-                                        <field name="note_emitted_date" string="Emited Date"/>
                                         <field name="note_received_date" string="Received Date"/>
+                                        <field name="note_emitted_date" string="Emited Date"/>
                                         <field name="note_observation" string="Observation"/>
                                         <field name="note_file_binary" string="File" filename="note_file_name" widget="binary"/>
                                         <field name="note_file_name" invisible="1"/>
                                     </group>
 
                                     <group string="Medical Order">
-                                        <field name="order_emitted_date" string="Emited Date"/>
                                         <field name="order_received_date" string="Received Date"/>
+                                        <field name="order_emitted_date" string="Emited Date"/>
                                         <field name="order_observation" string="Observation"/>
                                         <field name="order_file_binary" string="File" filename="order_file_name" widget="binary"/>
                                         <field name="order_file_name" invisible="1"/>
@@ -104,7 +104,7 @@
                                 </group>   
                             </page>   
 
-                            <page string="Insurrance" invisible="state in ['required']">
+                            <page string="Insurrance" invisible="(state =='required') or (state=='not_admiteed' and not insurance_agent_id)">
                                 <group>
                                     <field name="insurance_agent_id" String="Agency"/>
                                     <field name="insurance_plan_id" string="Plan"/>
