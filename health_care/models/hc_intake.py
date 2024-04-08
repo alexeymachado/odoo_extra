@@ -65,7 +65,7 @@ class HCIntake(models.Model):
     discipline_ids = fields.One2many(comodel_name='hc.intake.discipline', inverse_name='intake_id')
     medicine_ids = fields.One2many(comodel_name='hc.intake.medicine', inverse_name='intake_id')
     visit_ids = fields.One2many(comodel_name='hc.visit', inverse_name='intake_id')
-    procedure_ids = fields.Many2many(comodel_name='hc.procedure', relation='hc_intake_procedure', column1='intake_id', column2='procedure_id')
+    procedure_ids = fields.Many2many(comodel_name='hc.procedure')
     supply_ids=fields.Many2many(comodel_name='hc.supply')
 
     health_care_reason = fields.Char()

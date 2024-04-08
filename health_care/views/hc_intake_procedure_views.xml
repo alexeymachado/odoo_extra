@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="hc_procedure_action" model="ir.actions.act_window">
+            <field name="name">Intake Procedure</field>
+            <field name="res_model">hc.intake.procedure</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+
+    <!-- hc_intake_procedure tree view -->
+    <record id="hc_intake_procedure_view_tree" model="ir.ui.view">
+        <field name="name">Intake Procedure List</field>
+        <field name="model">hc.intake.procedure</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="procedure_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- hc_intake_procedure form view -->
+    <record id="hc_intake_procedure_view_form" model="ir.ui.view">
+        <field name="name">Intake Procedure Form</field>
+        <field name="model">hc.intake.procedure</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="procedure_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
