@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        
-        <record id="hc_patient_action" model="ir.actions.act_window">
-            <field name="name">Patient</field>
-            <field name="res_model">hc.patient</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-    </data>
+    <record id="hc_patient_action" model="ir.actions.act_window">
+        <field name="name">Patient</field>
+        <field name="res_model">hc.patient</field>
+        <field name="view_mode">tree,form</field>
+    </record>
 
     <!-- hc.patient tree view -->
     <record id="hc_patient_view_tree" model="ir.ui.view">
@@ -15,6 +12,7 @@
         <field name="model">hc.patient</field>
         <field name="arch" type="xml">
             <tree>
+                <button name="" string="Import" class="oe_highlight"/>
                 <field name="name"/>
                 <field name="mrn"/>
                 <field name="hic"/>
@@ -33,53 +31,34 @@
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
-                    <group string="Generales">
-                        <field name="contact_id" string="name"/>"
-                        <field name="first_name"/>
-                        <field name="last_name"/>
-                        <field name="sex"/>
-                        <field name="birth_day"/>
-                        <field name="age"/>
-                    </group>
-
                     <group>
-                        <field name="mrn"/>
-                        <field name="hic"/>
-                        <field name="resident_type"/>
-                    </group>       
+                        <group string="Generales">
+                            <field name="contact_id" string="name"/>"
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="sex"/>
+                            <field name="birth_day"/>
+                            <field name="age"/>
+                        </group>
 
-                    <group string="Contact">  
-                        <field name="phone"/>
-                        <field name="email"/>
-                        <field name="address"/>
-                        <field name="city"/>
-                        <field name="state"/>
-                        <field name="zip_code"/>
-                    </group>
- 
-                     <notebook>
-                        <page string="Contacto Emergencia">
-                            <group>
-                                <field name="contact_ids"/>
-                            </group>
-                        </page>
+                        <group string="Contact Info">  
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="address"/>
+                            <field name="city"/>
+                            <field name="state"/>
+                            <field name="zip_code"/>
+                        </group>
 
-                        <page string="Insurance">
-                            <field name="insurance_ids"/>
-                        </page>
+                        <group string="Patient">
+                            <field name="mrn"/>
+                            <field name="hic"/>
+                            <field name="resident_type"/>
+                        </group>
 
-                        <page string="Medicinas">
-                        </page>
-
-                        <page string="Visitas">
-                        </page>
- 
-                    </notebook>    
+                    </group>   
                 </sheet>
             </form>
         </field>
     </record>
-
-
-
 </odoo>

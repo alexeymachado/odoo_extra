@@ -39,17 +39,17 @@ class HCIntake(models.Model):
     note_emitted_date = fields.Date()
     note_observation = fields.Text()
 
-    order_emitted_date = fields.Date(default=fields.Date.today())
+    order_received_date = fields.Date(default=fields.Date.today())
     order_file_binary = fields.Binary()
     order_file_name = fields.Char()
-    order_received_date = fields.Date()
+    order_emitted_date = fields.Date()
     order_observation = fields.Text()
     
 
     functional_limitation_ids = fields.Many2many(comodel_name='hc.functional.limitation')
     flags_ids = fields.Many2many(comodel_name='hc.flags')
     activities_permitted = fields.Many2many(comodel_name='hc.activities.permitted')
-    weight_bearing = fields.Selection([('full', 'Full'),('partial', 'Partial'),('none','None')]) 
+    weight_bearing = fields.Selection([('full', 'Full'),('partial', 'Partial'),('none','None')], default='none') 
     assistive_device = fields.Selection([('cane','Cane'),('walker','Walker'),('wheelchair','Wheel Chair')])
     diets = fields.Text()
     allergies = fields.Text()

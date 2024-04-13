@@ -29,11 +29,5 @@ from . import hc_supply
 from . import hc_flags
 from . import hc_activities_permitted
 from . import hc_not_admitted_reason
-# from . import hc_intake_procedure
-
-
-
-
-
-
+from . import hc_intake_procedure
 

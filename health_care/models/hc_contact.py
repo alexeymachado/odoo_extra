@@ -8,21 +8,25 @@ class HCContact(models.Model):
     name = fields.Char()
     first_name = fields.Char(string='First Name')  # Nombre
     last_name = fields.Char(string='Last Name')  # Apellidos
-    gender = fields.Char(string='Gender')
-    birth_day = fields.Date()
-    primary_language = fields.Char()
-    age = fields.Integer(compute='_compute_age')
+    
     sex = fields.Selection(selection=(('M', 'Masculino'), ('F', 'Femenino')))
-    race = fields.Selection(selection=(
-        ('W', 'White'), ('B', 'Black'), ('M', 'Meztiza')))
+    gender = fields.Char(string='Gender')
+    race = fields.Selection(selection=(('W', 'White'), ('B', 'Black'), ('M', 'Meztiza')))
+
+    birth_day = fields.Date()
+    age = fields.Integer(compute='_compute_age')
+    primary_language = fields.Char()
+    
     ssn = fields.Char(string='Social Security Number')
-    phone = fields.Char()
-    facsimile = fields.Char()
+
+    
     address = fields.Char()
     city = fields.Char()
     state = fields.Char()
     zip_code = fields.Char()
     email = fields.Char()
+    phone = fields.Char()
+    facsimile = fields.Char()
 
     @api.depends('birth_day')
     def _compute_age(self):

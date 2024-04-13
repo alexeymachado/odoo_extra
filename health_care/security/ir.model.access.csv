@@ -1,7 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_hc_contact,hc.contact,model_hc_contact,base.group_user,1,1,1,1
 access_hc_contact_relation,hc.contact.relation,model_hc_contact_relation,base.group_user,1,1,1,1
-access_hc_nurse,hc.nurse,model_hc_nurse,base.group_user,1,1,1,1
 access_hc_nurse_category,hc.nurse.category,model_hc_nurse_category,base.group_user,1,1,1,1
 access_hc_patient,hc.patient,model_hc_patient,base.group_user,1,1,1,1
 access_hc_patient_contact,hc.patient.contact,model_hc_patient_contact,base.group_user,1,1,1,1

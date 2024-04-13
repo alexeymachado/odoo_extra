@@ -7,56 +7,48 @@
     'author': '',
     'website': '',
     'category': '',
-    'depends': ['base', 'web'],
-    'data': [ 
-        'data/hc.facility.type.csv',
-        'data/hc.activities.permitted.csv',
-        'data/hc.flags.csv',
-        'data/hc.functional.limitation.csv',
-        'data/hc.not.admitted.reason.csv',
+    'depends': ['base', 'web', 'hr'],
+    "data": [
+        "data/hc.facility.type.csv",
+        "data/hc.activities.permitted.csv",
+        "data/hc.flags.csv",
+        "data/hc.functional.limitation.csv",
+        "data/hc.not.admitted.reason.csv",
+        "data/hc.discipline.csv",
+        "security/ir.model.access.csv",
+        "views/hc_contact_views.xml",
+        "views/hc_contact_relation_views.xml",
+        "views/hc_certification_views.xml",
+        "views/hc_patient_views.xml",
+        "views/hc_patient_contact_views.xml",
+        "views/hc_patient_insurance_views.xml",
+        "views/hc_patient_import_views.xml",
+
+        "views/hc_physician_views.xml",
         
-        'security/ir.model.access.csv',
+        "views/hc_nurse_views.xml",
+        "views/hc_nurse_category_views.xml",
+        "views/hc_nurse_certification.xml",
         
-        'views/hc_contact_views.xml',
-        'views/hc_contact_relation_views.xml',
-
-        'views/hc_certification_views.xml',
+        "views/hc_visit_views.xml",
+        "views/hc_visit_type_views.xml",
         
-        'views/hc_patient_views.xml',
-        'views/hc_patient_contact_views.xml',
-        'views/hc_patient_insurance_views.xml',
-        'views/hc_patient_import_views.xml',
+        "views/hc_medicine_views.xml",
+        "views/hc_medicine_family_views.xml",
+        "views/hc_intake_views.xml",
+        "views/hc_discipline_views.xml",
+        "views/hc_diagnostic_views.xml",
+        "views/hc_supply_views.xml",
+        "views/hc_procedure_views.xml",
+        "views/hc_intake_diagnostic_views.xml",
+        "views/hc_intake_medicine_views.xml",
+        "views/hc_intake_discipline_views.xml",
+        "views/hc_intake_procedure_views.xml",
+        "views/hc_facility_type_views.xml",
+        "views/hc_facility_views.xml",
+        "views/hc_functional_limitation_views.xml",
+        "views/hc_menuitem.xml",
 
-        'views/hc_physician_views.xml',
-        
-        'views/hc_nurse_views.xml',
-        'views/hc_nurse_category_views.xml',
-        'views/hc_nurse_certification.xml',
-
-        'views/hc_visit_views.xml',
-        'views/hc_visit_type_views.xml',
-       
-        'views/hc_medicine_views.xml',
-        'views/hc_medicine_family_views.xml',
-
-        'views/hc_intake_views.xml',
- 
-        'views/hc_discipline_views.xml',
-        'views/hc_diagnostic_views.xml',
-        'views/hc_supply_views.xml',
-        'views/hc_procedure_views.xml',
-        
-        'views/hc_intake_diagnostic_views.xml',
-        'views/hc_intake_medicine_views.xml',
-        'views/hc_intake_discipline_views.xml',
-        # 'views/hc_intake_procedure_views.xml',
-
-        'views/hc_facility_type_views.xml',
-        'views/hc_facility_views.xml',
-
-        'views/hc_functional_limitation_views.xml',
-   
-        'views/hc_menuitem.xml',
     ],
     'assets': {
 

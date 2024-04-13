@@ -6,7 +6,7 @@ class HCNurseCertification(models.Model):
     _name = 'hc.nurse.certification'
     _description = 'HC Nurse Certification'
 
-    nurse_id = fields.Many2one(comodel_name='hc.nurse')
+    nurse_id = fields.Many2one(comodel_name='hr.employee')
     certification_id = fields.Many2one(comodel_name='hc.certification')
     
     emit_date=fields.Date()

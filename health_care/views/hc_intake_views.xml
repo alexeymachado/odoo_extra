@@ -39,7 +39,7 @@
             <field name="arch" type="xml">
                 <form string="Intake">
                     <header>
-                        <field name='state' widget='statusbar' statusbar_visible="required,wait_doc,not_admitted,admitted,finished" options="{'clickable': 1}" />
+                        <field name='state' widget='statusbar' statusbar_visible="required,wait_doc,not_admitted,admitted,finished" options="{'clickable': 0}" />
                         <button name="set_wait_doc" class="oe_highlight" invisible="state != 'required'" string="Waiting for Document" type="object"/>
                         <button name="set_no_admit" class="oe_highlight" invisible="state in ['admitted', 'finished']" string="Not Admitted" type="object"/>
                         <button name="set_admit" class="oe_highlight" invisible="state != 'wait_doc'" string="Admitted" type="object"/>
@@ -79,7 +79,7 @@
    
                         <notebook>
 
-                            <page string='Medical Note/Order' invisible="(state =='required') or (state=='not_admiteed' and not physician_id)">
+                            <page string='Medical Note/Order' invisible="(state =='required') or (state=='not_admitted' and not physician_id)">
                                 
                                 <group>
                                     <field name="physician_id"/>
@@ -104,7 +104,7 @@
                                 </group>   
                             </page>   
 
-                            <page string="Insurrance" invisible="(state =='required') or (state=='not_admiteed' and not insurance_agent_id)">
+                            <page string="Insurrance" invisible="(state =='required') or (state=='not_admitted' and not insurance_agent_id)">
                                 <group>
                                     <field name="insurance_agent_id" String="Agency"/>
                                     <field name="insurance_plan_id" string="Plan"/>
@@ -118,7 +118,7 @@
                                     <group>
                                         <field name="health_care_reason"/>
                                         <field name="homebound_reason"/>
-                                        <separator/>
+                                        <!-- <separator/> -->
                                         <field name="diets"/>
                                         <field name="allergies"/>
                                     </group>
@@ -127,7 +127,7 @@
                                         <field name='flags_ids' widget="many2many_tags"/>
                                         <field name='functional_limitation_ids' widget="many2many_tags" options="{'no_open': False}" />  
                                         <field name='activities_permitted' widget="many2many_tags"/> 
-                                        <field name="weight_bearing"/>
+                                        <field name="weight_bearing" widget='radio' options="{'horizontal': true}"/>
                                         <field name="assistive_device"/>
                                     </group>
 

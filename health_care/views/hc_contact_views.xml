@@ -17,17 +17,22 @@
                     <field name="name"/>
                     <field name="first_name"/>
                     <field name="last_name"/>
-                    <field name="gender"/>
                     <field name="sex"/>
+                    <field name="gender"/>
                     <field name="race"/>
-                    <field name="birth_day"/>
+                   
+                   <field name="birth_day"/>
                     <field name="age"/>
-                    <field name="phone"/>
+                   
                     <field name="email"/>
+                    <field name="phone"/>
+                    <field name="facsimile"/>
+
                     <field name="address"/>
                     <field name="city"/>
                     <field name="state"/>
                     <field name="zip_code"/>
+
                     <button name="button_details" string="Details" type="object"/>
                 </tree>
             </field>
@@ -41,24 +46,25 @@
                 <form string="">
                     <sheet>
                         <group>
-                            <field name="name"/>
-                            <field name="first_name"/>
-                            <field name="last_name"/>
-                            <field name="gender"/>
-                            <field name="sex"/>
-                            <field name="race"/>
-                            <field name="birth_day"/>
-                            <field name="age"/>
+                            <group>
+                                <field name="name"/>
+                                <field name="first_name"/>
+                                <field name="last_name"/>
+                                <field name="gender"/>
+                                <field name="sex"/>
+                                <field name="race"/>
+                                <field name="birth_day"/>
+                                <field name="age"/>
+                            </group>
+                            <group string="Contact Info">
+                                <field name="phone"/>
+                                <field name="email"/>
+                                <field name="address"/>
+                                <field name="city"/>
+                                <field name="state"/>
+                                <field name="zip_code"/>
+                            </group>
                         </group>
-                        <group>
-                            <field name="phone"/>
-                            <field name="email"/>
-                            <field name="address"/>
-                            <field name="city"/>
-                            <field name="state"/>
-                            <field name="zip_code"/>
-                        </group>
-
                     </sheet>
                 </form>
             </field>
