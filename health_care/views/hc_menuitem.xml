@@ -6,7 +6,7 @@
 
         <menuitem id="hc_patient_menu_categ" name="Patient" sequence="2">
             <menuitem id="hc_patient_menu_act" action="hc_patient_action" sequence="1"/>
-            <menuitem  id="hc_patient_import_menu_act" action="hc_patient_import_action" sequence="2"/>
+            <!-- <menuitem  id="hc_patient_import_menu_act" action="hc_patient_import_action" sequence="2"/> -->
         </menuitem>
         
         <menuitem id="hc_nurse_menu_action" action="hc_nurse_action" sequence="3"/>
@@ -15,7 +15,7 @@
 
         <menuitem id="hc_contact_menu_act" action="hc_contact_action" sequence="5"/>    
 
-        <menuitem id="hc_visit_menu_act" action="hc_visit_action" sequence="6"/>
+        <menuitem id="hc_task_menu_act" action="hc_task_action" sequence="6"/>
         
          
         <menuitem id="hc_configuration_menu_categ" name="Configuracion" sequence="10">
@@ -27,7 +27,7 @@
 
             <menuitem id="hc_nurse_category_menu_act" action="hc_nurse_category_action"/>
             
-            <menuitem id="hc_visit_type_menu_act" action="hc_visit_type_action"/>
+            <menuitem id="hc_task_type_menu_act" action="hc_task_type_action"/>
 
             <menuitem id="hc_contact_relation_menu_act" action="hc_contact_relation_action"/>
 

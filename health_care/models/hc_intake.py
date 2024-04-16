@@ -15,11 +15,15 @@ class HCIntake(models.Model):
 
     referral_id = fields.Many2one(comodel_name='hc.contact')
 
-    patient_id = fields.Many2one(comodel_name='hc.patient')
-    pat_address = fields.Char(related='patient_id.address', string="Address")
+    patient_id = fields.Many2one(comodel_name='res.partner')
+   
+    mrn = fields.Char(string='Medical Record Number')
+    hic = fields.Char(string='HIC')
+
+    pat_address = fields.Char(related='patient_id.contact_address', string="Address")
     pat_city = fields.Char(related='patient_id.city', string="City")
-    pat_state = fields.Char(related='patient_id.state', string="State")
-    pat_zip_code = fields.Char(related='patient_id.zip_code', string="Zip Code")
+    pat_state = fields.Char(related='patient_id.state_id.name', string="State")
+    pat_zip_code = fields.Char(related='patient_id.zip', string="Zip Code")
     
 
     facility_id = fields.Many2one(comodel_name='hc.facility')
@@ -64,7 +68,7 @@ class HCIntake(models.Model):
     diagnostic_ids= fields.One2many(comodel_name='hc.intake.diagnostic', inverse_name='intake_id')
     discipline_ids = fields.One2many(comodel_name='hc.intake.discipline', inverse_name='intake_id')
     medicine_ids = fields.One2many(comodel_name='hc.intake.medicine', inverse_name='intake_id')
-    visit_ids = fields.One2many(comodel_name='hc.visit', inverse_name='intake_id')
+    task_ids = fields.One2many(comodel_name='hc.task', inverse_name='intake_id')
     procedure_ids = fields.Many2many(comodel_name='hc.procedure')
     supply_ids=fields.Many2many(comodel_name='hc.supply')
 
@@ -72,8 +76,8 @@ class HCIntake(models.Model):
     homebound_reason = fields.Char()
     estimated_len_of_stay = fields.Integer()
 
-    coordinator_id = fields.Many2one(comodel_name='hc.contact')
-    nurse_id = fields.Many2one (comodel_name='hc.nurse')
+    coordinator_id = fields.Many2one(comodel_name='hr.employee')
+    nurse_id = fields.Many2one (comodel_name='hr.employee')
 
     start_care_date = fields.Date()
 

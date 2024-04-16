@@ -2,13 +2,10 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_hc_contact,hc.contact,model_hc_contact,base.group_user,1,1,1,1
 access_hc_contact_relation,hc.contact.relation,model_hc_contact_relation,base.group_user,1,1,1,1
 access_hc_nurse_category,hc.nurse.category,model_hc_nurse_category,base.group_user,1,1,1,1
-access_hc_patient,hc.patient,model_hc_patient,base.group_user,1,1,1,1
 access_hc_patient_contact,hc.patient.contact,model_hc_patient_contact,base.group_user,1,1,1,1
 access_hc_patient_insurance,hc.patient.insurance,model_hc_patient_insurance,base.group_user,1,1,1,1
-access_hc_patient_import,hc.patient.import,model_hc_patient_import,base.group_user,1,1,1,1
-access_hc_physician,hc.physician,model_hc_physician,base.group_user,1,1,1,1
-access_hc_visit,hc.visit,model_hc_visit,base.group_user,1,1,1,1
-access_hc_visit_type,hc.visit_type,model_hc_visit_type,base.group_user,1,1,1,1
+access_hc_task,hc.task,model_hc_task,base.group_user,1,1,1,1
+access_hc_task_type,hc.task_type,model_hc_task_type,base.group_user,1,1,1,1
 access_hc_intake,hc.intake,model_hc_intake,base.group_user,1,1,1,1
 access_hc_insurance_agent,hc.insurance.agent,model_hc_insurance_agent,base.group_user,1,1,1,1
 access_hc_insurance_plan,hc.insurance.plan,model_hc_insurance_plan,base.group_user,1,1,1,1
@@ -30,3 +27,4 @@ access_hc_nurse_certification,hc.nurse.certification,model_hc_nurse_certificatio
 access_hc_flags,hc.flags,model_hc_flags,base.group_user,1,1,1,1
 access_hc_activities_permitted,hc.activities.permitted,model_hc_activities_permitted,base.group_user,1,1,1,1
 access_hc_not_admitted_reason,hc.not.admitted.reason,model_hc_not_admitted_reason,base.group_user,1,1,1,1
+

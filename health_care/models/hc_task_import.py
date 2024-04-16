@@ -7,15 +7,15 @@ from datetime import datetime
 
 
 
-class HCPatientImport(models.TransientModel):
+class HCTaskImport(models.TransientModel):
 
-    _name = "hc.patient.import"
-    _description = 'Patient Import'
+    _name = "hc.task.import"
+    _description = 'Task Import'
 
     file = fields.Binary(string="File", required=True)
 
 
-    def patient_import(self):
+    def task_import(self):
         try:
             wb = openpyxl.load_workbook(BytesIO(base64.b64decode(self.file)), read_only=True)
             ws = wb.active

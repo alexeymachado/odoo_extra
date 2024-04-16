@@ -146,8 +146,8 @@
                                 <field name="medicine_ids"/>
                             </page>
 
-                            <page string="Visits" invisible="state in ['required', 'wait_doc', 'not_admitted']">
-                                <field name="visit_ids"/>
+                            <page string="Tasks" invisible="state in ['required', 'wait_doc', 'not_admitted']">
+                                <field name="task_ids"/>
                             </page>
 
                             <page string="Procedures" invisible="state in ['required', 'wait_doc', 'not_admitted']">

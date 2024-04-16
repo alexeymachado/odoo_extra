@@ -1,72 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
         
-        <record id="hc_physician_action" model="ir.actions.act_window">
-            <field name="name">Physician</field>
-            <field name="res_model">hc.physician</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-    </data>
-
-    <!-- hc.physician tree view -->
     <record id="hc_physician_view_tree" model="ir.ui.view">
-        <field name="name">hc_physician_view_tree</field>
-        <field name="model">hc.physician</field>
-         <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-                <field name="first_name"/>
-                <field name="last_name"/>
+        <field name="name">Physician List</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="mode">extension</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <field name="display_name" position="after">
                 <field name="upin"/>
                 <field name="npi"/>
-            </tree>
+            </field>    
         </field>
     </record>
 
-
-    <!-- hc_physician form view -->
     <record id="hc_physician_view_form" model="ir.ui.view">
-        <field name="name">hc_physician.view.form</field>
-        <field name="model">hc.physician</field>
+        <field name="name">Physician Form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"></field>
+        <field name="mode">extension</field>
+        <field name="priority">16</field>
         <field name="arch" type="xml">
-            <form string="">
-                <sheet>
+            <xpath expr="//page[@name='internal_notes']" position="after">
+                <page string="License">
                     <group>
-                        <field name="first_name"/>
-                        <field name="last_name"/>
+                        <field name="license_file"></field>
+                        <field name="state_license"></field>
+                        <field name="state_license_expiration_date"></field>
+                        <field name="state_license_str"></field>
                     </group>
+                </page>
+            </xpath>
 
-                    <group>
-                        <field name="npi"/>
-                        <field name="upin"/>
-                        <field name="state_license"/>
-                        <field name="state_license_expiration_date"/>
-                    </group>
-
-                    <group>
-                        <field name="gender"/>
-                        <field name="phone"/>
-                    </group>
-
-
-                </sheet>
-            </form>
         </field>
     </record>
 
-
-    <!-- hc_physician search view -->
     <record id="hc_physician_view_search" model="ir.ui.view">
-        <field name="name">hc_physician.view.search</field>
-        <field name="model">hc.physician</field>
+        <field name="name">Physician Search</field>
+        <field name="model">res.partner</field>
         <field name="arch" type="xml">
             <search string="Search Description">
-                <!-- Add your fields here -->
-                <field name="first_name"/>
-                <field name="last_name"/>
+                <field name="name"/>
             </search>
         </field>
+    </record>
+
+
+    <record id="hc_physician_action" model="ir.actions.act_window">
+        <field name="name">Physician</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="hc_physician_view_search"/>
+    </record>
+
+    <record id="hc_physician_action_view_tree" model="ir.actions.act_window.view">
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="hc_physician_view_tree"></field>
+        <field name="act_window_id" ref="hc_physician_action"></field>
+    </record>
+
+    <record id="hc_physician_action_view_form" model="ir.actions.act_window.view">
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="hc_physician_view_form"></field>
+        <field name="act_window_id" ref="hc_physician_action"></field>
     </record>
 
 

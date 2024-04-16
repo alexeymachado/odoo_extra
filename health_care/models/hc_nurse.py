@@ -7,6 +7,8 @@ class HCNurse(models.Model):
 
     certification_ids = fields.One2many(comodel_name='hc.nurse.certification', inverse_name='nurse_id')
 
+    job=fields.Char(related="job_id.name")
+
     is_nurse=fields.Boolean()
 
     @api.onchange('is_nurse')
