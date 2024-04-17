@@ -22,7 +22,7 @@
         "views/hc_patient_views.xml",
         "views/hc_patient_contact_views.xml",
         "views/hc_patient_insurance_views.xml",
-        # "views/hc_patient_import_views.xml",
+        "views/hc_patient_import_views.xml",
         "views/hc_physician_views.xml",
         "views/hc_nurse_views.xml",
         "views/hc_nurse_category_views.xml",

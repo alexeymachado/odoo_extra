@@ -4,10 +4,10 @@
         
         <menuitem id="hc_intake_menu_act" name="Intake" action="hc_intake_action" sequence="1"/>    
 
-        <menuitem id="hc_patient_menu_categ" name="Patient" sequence="2">
-            <menuitem id="hc_patient_menu_act" action="hc_patient_action" sequence="1"/>
-            <!-- <menuitem  id="hc_patient_import_menu_act" action="hc_patient_import_action" sequence="2"/> -->
-        </menuitem>
+        <menuitem id="hc_patient_menu_act" action="hc_patient_action" sequence="2"/>
+        
+        <menuitem  id="hc_patient_import_menu_act" action="hc_patient_import_action" sequence="2"/>
+   
         
         <menuitem id="hc_nurse_menu_action" action="hc_nurse_action" sequence="3"/>
         

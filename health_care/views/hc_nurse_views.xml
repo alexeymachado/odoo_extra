@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     
-    <record id="hc_nurse_action" model="ir.actions.act_window">
-        <field name="name">Nurse</field>
-        <field name="res_model">hr.employee</field>
-        <field name="view_mode">tree,form</field>
-        <field name="domain">[('is_nurse','=',True)]</field>
-        <field name="context">{'default_is_nurse': True}</field>
-    </record>
-
     <record id="hc_nurse_view_tree" model="ir.ui.view">
         <field name="name">Nurse List</field>
         <field name="model">hr.employee</field>
@@ -29,10 +21,10 @@
         <field name="priority">16</field>  
         <field name="arch" type="xml">
             <xpath expr="//page[@name='hr_settings']" position="after">
-                <page string="Nurse" invisible="job!='Nurse'">
+                <page string="Certificaciones" invisible="job!='Nurse'">
                     <group>
-                        <field name="is_nurse" invisible="False"></field>
-                        <field name="job" invisible="False"></field>
+                        <field name="is_nurse" invisible="True"></field>
+                        <field name="job" invisible="True"></field>
                         
                         <field name="category_id"></field>
                         <field name="certification_ids"></field>
@@ -40,6 +32,14 @@
                 </page>
             </xpath>
         </field>
+    </record>
+
+    <record id="hc_nurse_action" model="ir.actions.act_window">
+        <field name="name">Nurse</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_nurse','=',True)]</field>
+        <field name="context">{'default_is_nurse': True}</field>
     </record>
 
 

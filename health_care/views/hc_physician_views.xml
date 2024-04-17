@@ -5,8 +5,8 @@
         <field name="name">Physician List</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_tree"/>
-        <field name="mode">extension</field>
-        <field name="priority">16</field>
+        <field name="mode">primary</field>
+        <field name="priority">20</field>
         <field name="arch" type="xml">
             <field name="display_name" position="after">
                 <field name="upin"/>
@@ -19,12 +19,18 @@
         <field name="name">Physician Form</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"></field>
-        <field name="mode">extension</field>
-        <field name="priority">16</field>
+        <field name="mode">primary</field>
+        <field name="priority">20</field>
         <field name="arch" type="xml">
+            
+            <field name="company_type" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+
             <xpath expr="//page[@name='internal_notes']" position="after">
                 <page string="License">
                     <group>
+                        <field name="is_physician" invisible="True"></field>
                         <field name="license_file"></field>
                         <field name="state_license"></field>
                         <field name="state_license_expiration_date"></field>
@@ -46,10 +52,14 @@
         </field>
     </record>
 
+
+
     <record id="hc_physician_action" model="ir.actions.act_window">
         <field name="name">Physician</field>
         <field name="res_model">res.partner</field>
         <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_physician','=',True)]</field>
+        <field name="context">{'default_is_physician': True}</field>
         <field name="search_view_id" ref="hc_physician_view_search"/>
     </record>
 
