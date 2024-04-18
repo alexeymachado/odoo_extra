@@ -13,12 +13,7 @@
                    </group>
                </group>
                <footer>
-                   <button
-                       name="patient_import"
-                       string="Import"
-                       type="object"
-                       class="btn-primary"
-                   />
+                   <button name="patient_import"  string="Import" type="object" class="btn-primary"/>
                </footer>
            </form>
        </field>
@@ -30,8 +25,4 @@
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>
-
-
-      
-
 </odoo>

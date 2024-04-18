@@ -20,8 +20,6 @@
         "views/hc_contact_relation_views.xml",
         "views/hc_certification_views.xml",
         "views/hc_patient_views.xml",
-        "views/hc_patient_contact_views.xml",
-        "views/hc_patient_insurance_views.xml",
         "views/hc_patient_import_views.xml",
         "views/hc_physician_views.xml",
         "views/hc_nurse_views.xml",
@@ -44,6 +42,8 @@
         "views/hc_facility_views.xml",
         "views/hc_functional_limitation_views.xml",
         "views/hc_menuitem.xml",
+        "views/hc_patient_contact_views.xml",
+        "security/ir.model.access.csv"
     ],
     'assets': {
 

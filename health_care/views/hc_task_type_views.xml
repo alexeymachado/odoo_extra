@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <record id="hc_task_type_action" model="ir.actions.act_window">
-            <field name="name">task Type</field>
+            <field name="name">Task Type</field>
             <field name="res_model">hc.task.type</field>
             <field name="view_mode">tree,form</field>
         </record>

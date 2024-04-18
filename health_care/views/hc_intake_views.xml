@@ -2,14 +2,13 @@
 <odoo>
     <data>
         
-        <!-- hc.intake action window -->
+
         <record id="hc_intake_action" model="ir.actions.act_window">
             <field name="name">Intake</field>
             <field name="res_model">hc.intake</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <!-- hc_intake tree view -->
         <record id="hc_intake_view_tree" model="ir.ui.view">
             <field name="name">hc_intake_view_tree</field>
             <field name="model">hc.intake</field>
@@ -32,14 +31,14 @@
             </field>
         </record>
 
-        <!-- hc_intake form view -->
+
         <record id="hc_intake_view_form" model="ir.ui.view">
             <field name="name">hc_intake_view_form</field>
             <field name="model">hc.intake</field>
             <field name="arch" type="xml">
                 <form string="Intake">
                     <header>
-                        <field name='state' widget='statusbar' statusbar_visible="required,wait_doc,not_admitted,admitted,finished" options="{'clickable': 0}" />
+                        <field name='state' widget='statusbar' statusbar_visible="required,wait_doc,not_admitted,admitted,finished" options="{'clickable': 1}" />
                         <button name="set_wait_doc" class="oe_highlight" invisible="state != 'required'" string="Waiting for Document" type="object"/>
                         <button name="set_no_admit" class="oe_highlight" invisible="state in ['admitted', 'finished']" string="Not Admitted" type="object"/>
                         <button name="set_admit" class="oe_highlight" invisible="state != 'wait_doc'" string="Admitted" type="object"/>
@@ -59,7 +58,7 @@
 
                             <group string="Patient"> 
                                 <field name='patient_id' string='Name'/>
-                                <field name='pat_address'/>
+                                <field name='pat_street'/>
                                 <field name='pat_city'/>
                                 <field name='pat_state'/>
                                 <field name='pat_zip_code'/>
@@ -139,7 +138,14 @@
                             </page>
 
                             <page string="Disciplines" invisible="state in ['required', 'wait_doc', 'not_admitted']">
-                                <field name="discipline_ids"/>
+                                <group>
+                                    <field name='discipline'/>
+                                    <field name='discipline_frec'/>
+                                    
+                                    <field name="discipline_ids"/>
+                                    
+                                </group>
+
                             </page>
 
                             <page string="Medicines" invisible="state in ['required', 'wait_doc', 'not_admitted']">

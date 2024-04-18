@@ -1,7 +1,6 @@
 from . import hc_contact
 from . import hc_contact_relation
 from . import hc_patient
-from . import hc_patient_contact
 from . import hc_certification
 from . import hc_nurse
 from . import hc_nurse_category
@@ -12,7 +11,6 @@ from . import hc_task_type
 from . import hc_intake
 from . import hc_insurance_agent
 from . import hc_insurance_plan
-from . import hc_patient_insurance
 from . import hc_patient_import
 from . import hc_discipline
 from . import hc_intake_discipline
@@ -30,4 +28,4 @@ from . import hc_flags
 from . import hc_activities_permitted
 from . import hc_not_admitted_reason
 from . import hc_intake_procedure
-
+from . import hc_patient_contact

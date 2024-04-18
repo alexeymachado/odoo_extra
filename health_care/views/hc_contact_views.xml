@@ -1,74 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
+    <record id="hc_contact_view_tree" model="ir.ui.view">
+        <field name="name">HC Contact List</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="mode">primary</field>
+        <field name="priority">20</field>
         
-        <record id="hc_contact_action" model="ir.actions.act_window">
-            <field name="name">Contact</field>
-            <field name="res_model">hc.contact</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <!-- hc.contact tree view -->
-        <record id="hc_contact_view_tree" model="ir.ui.view">
-            <field name="name">hc.contact.view.tree</field>
-            <field name="model">hc.contact</field>
-            <field name="arch" type="xml">
-                <tree editable="top">
-                    <field name="name"/>
-                    <field name="first_name"/>
-                    <field name="last_name"/>
-                    <field name="sex"/>
-                    <field name="gender"/>
-                    <field name="race"/>
-                   
-                   <field name="birth_day"/>
-                    <field name="age"/>
-                   
-                    <field name="email"/>
-                    <field name="phone"/>
-                    <field name="facsimile"/>
-
-                    <field name="address"/>
-                    <field name="city"/>
-                    <field name="state"/>
-                    <field name="zip_code"/>
-
-                    <button name="button_details" string="Details" type="object"/>
-                </tree>
+        <field name="arch" type="xml">
+            <field name="vat" position="after">
+                <field name="gender"/>
+                <field name="race"/>
+                <field name="birthday"/>
+                <field name="age"/>
             </field>
-        </record>
+        </field>
+    </record>
 
-        <!-- hc_contact form view -->
-        <record id="hc_contact_view_form" model="ir.ui.view">
-            <field name="name">hc_contact_view_form</field>
-            <field name="model">hc.contact</field>
-            <field name="arch" type="xml">
-                <form string="">
-                    <sheet>
-                        <group>
-                            <group>
-                                <field name="name"/>
-                                <field name="first_name"/>
-                                <field name="last_name"/>
-                                <field name="gender"/>
-                                <field name="sex"/>
-                                <field name="race"/>
-                                <field name="birth_day"/>
-                                <field name="age"/>
-                            </group>
-                            <group string="Contact Info">
-                                <field name="phone"/>
-                                <field name="email"/>
-                                <field name="address"/>
-                                <field name="city"/>
-                                <field name="state"/>
-                                <field name="zip_code"/>
-                            </group>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+    <record id="hc_contact_view_form" model="ir.ui.view">
+        <field name="name">HC Contact Form </field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="mode">primary</field>
+        <field name="priority">20</field>
         
-    </data>
+        <field name="arch" type="xml">
+
+                        
+            <xpath expr="//field[@id='individual']" position="attributes">
+                <attribute name="placeholder">Full Name</attribute>
+            </xpath>
+
+            <xpath expr="//page[@name='contact_addresses']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//page[@name='sales_purchases']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='company_type']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="hc_contact_action" model="ir.actions.act_window">
+        <field name="name">Contact</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="hc_contact_action_view_list" model="ir.actions.act_window.view">
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="hc_contact_view_tree"/>
+        <field name="act_window_id" ref="hc_contact_action"/>
+    </record>
+
+    <record id="hc_contact_action_view_form" model="ir.actions.act_window.view">
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="hc_contact_view_form"/>
+        <field name="act_window_id" ref="hc_contact_action"/>
+    </record>
+
 </odoo>

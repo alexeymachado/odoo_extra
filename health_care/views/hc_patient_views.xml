@@ -4,7 +4,7 @@
     <record id="hc_patient_view_tree" model="ir.ui.view">
         <field name="name">Patient List</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="inherit_id" ref="hc_contact_view_tree"/>
         <field name="mode">primary</field>
         <field name="priority">20</field>
         <field name="arch" type="xml">
@@ -19,24 +19,43 @@
     <record id="hc_patient_view_form" model="ir.ui.view">
         <field name="name">Patient Form</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="inherit_id" ref="hc_contact_view_form"/>
         <field name="mode">primary</field>
         <field name="priority">20</field>
         <field name="arch" type="xml">
-            <field name="company_type" position="attributes">
-                <attribute name="invisible">1</attribute>
+
+           <xpath expr="//field[@name='parent_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+           <field name= "vat" position="after">
+                <field name="resident_type"></field>
             </field>
+
+            <xpath expr="//page[@name='contact_addresses']" position="before">
+                <page string="Personal Info">
+                    <group>
+                    <field name="gender_str"/>
+                    <field name="race"/>
+                    <field name="birthday"/>
+                    <field name="age"/>
+                    </group>
+                </page>   
+
+                <page string="Emergency Contact" >
+                    <field name="emergency_contact_ids"/>
+                </page> 
+
+             </xpath>
+
         </field>
     </record> 
         
-
-
     <record id="hc_patient_action" model="ir.actions.act_window">
         <field name="name">Patient</field>
         <field name="res_model">res.partner</field>
-        <field name="view_mode">tree,form</field>
-        <field name="domain">[]</field>
-        <field name="context">{}</field>
+        <field name="domain">[('is_patient','=',True)]</field>
+        <field name="context">{'default_is_patient': True}</field>
     </record>
 
     <record id="hc_patient_action_view_tree" model="ir.actions.act_window.view">

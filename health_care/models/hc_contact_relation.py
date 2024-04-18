@@ -5,6 +5,7 @@ class HCContactRelation(models.Model):
     _description = 'HC Contact Relation'
 
     name = fields.Char()
+    observation = fields.Char()
  
 
 

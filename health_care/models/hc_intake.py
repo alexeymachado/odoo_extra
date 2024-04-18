@@ -13,17 +13,17 @@ class HCIntake(models.Model):
     end_date = fields.Date()
     not_admitted_reason_id = fields.Many2one(comodel_name='hc.not.admitted.reason')
 
-    referral_id = fields.Many2one(comodel_name='hc.contact')
+    referral_id = fields.Many2one(comodel_name='res.partner')
 
-    patient_id = fields.Many2one(comodel_name='res.partner')
+    patient_id = fields.Many2one(comodel_name='res.partner', domain=[('is_patient','=',True)])
    
     mrn = fields.Char(string='Medical Record Number')
     hic = fields.Char(string='HIC')
 
-    pat_address = fields.Char(related='patient_id.contact_address', string="Address")
+    pat_street = fields.Char(related='patient_id.street', string="Street")
     pat_city = fields.Char(related='patient_id.city', string="City")
-    pat_state = fields.Char(related='patient_id.state_id.name', string="State")
-    pat_zip_code = fields.Char(related='patient_id.zip', string="Zip Code")
+    pat_state = fields.Char(related='patient_id.state_str', string="State")
+    pat_zip_code = fields.Char(related='patient_id.zip', string="Zip")
     
 
     facility_id = fields.Many2one(comodel_name='hc.facility')
@@ -35,7 +35,7 @@ class HCIntake(models.Model):
     insurance_number = fields.Char()
     insurance_aproved = fields.Boolean()
 
-    physician_id = fields.Many2one(comodel_name='hc.physician')
+    physician_id = fields.Many2one(comodel_name='res.partner', domain=[('is_physician','=',True)])
 
     note_received_date = fields.Date(default=fields.Date.today())
     note_file_binary = fields.Binary()
@@ -66,6 +66,8 @@ class HCIntake(models.Model):
     laboratory_frequency = fields.Char()
         
     diagnostic_ids= fields.One2many(comodel_name='hc.intake.diagnostic', inverse_name='intake_id')
+    discipline = fields.Text()
+    discipline_frec = fields.Text()
     discipline_ids = fields.One2many(comodel_name='hc.intake.discipline', inverse_name='intake_id')
     medicine_ids = fields.One2many(comodel_name='hc.intake.medicine', inverse_name='intake_id')
     task_ids = fields.One2many(comodel_name='hc.task', inverse_name='intake_id')

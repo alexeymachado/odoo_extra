@@ -4,7 +4,7 @@
     <record id="hc_physician_view_tree" model="ir.ui.view">
         <field name="name">Physician List</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="inherit_id" ref="hc_contact_view_tree"/>
         <field name="mode">primary</field>
         <field name="priority">20</field>
         <field name="arch" type="xml">
@@ -18,16 +18,16 @@
     <record id="hc_physician_view_form" model="ir.ui.view">
         <field name="name">Physician Form</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_form"></field>
+        <field name="inherit_id" ref="hc_contact_view_form"></field>
         <field name="mode">primary</field>
         <field name="priority">20</field>
         <field name="arch" type="xml">
             
-            <field name="company_type" position="attributes">
-                <attribute name="invisible">True</attribute>
+            <field name="mobile" position="after">
+                <field name="facsimile"/>
             </field>
 
-            <xpath expr="//page[@name='internal_notes']" position="after">
+            <xpath expr="//page[@name='internal_notes']" position="before">
                 <page string="License">
                     <group>
                         <field name="is_physician" invisible="True"></field>

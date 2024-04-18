@@ -1,13 +1,18 @@
-from odoo import api, fields, models
+# -*- coding: utf-8 -*-
+import logging
+
+from odoo import models, fields, api, _
+from odoo.exceptions import UserError, ValidationError
+
+_logger = logging.getLogger(__name__)
 
 
 class HCPatientContact(models.Model):
     _name = 'hc.patient.contact'
-    _description = 'Patient Contact Model'
+    _description = _('Hc Patient Contact')
 
-    _inherits = {'hc.contact': 'contact_id'}
+    patient_id = fields.Many2one(comodel_name='res.partner', domain=[('is_patient','=','true')])
+    contact_id = fields.Many2one(comodel_name='res.partner')
+    relation_id = fields.Many2one(comodel_name='hc.contact.relation')
+    observation = fields.Text()
 
-    contact_id = fields.Many2one(comodel_name='hc.contact', required=True, ondelete='cascade')
-    patient_id = fields.Many2one(comodel_name='hc.patient', required=True, ondelete='cascade')
-
-    contact_relation_id = fields.Many2one(string='relation', comodel_name='hc.contact.relation', required=True, ondelete='cascade')

@@ -25,28 +25,24 @@ class HCPatientImport(models.TransientModel):
             if not facility_type_id:
                 facility_type_id = self.env['hc.facility.type'].create({'name':'farmacy'}).id
 
-
-            
+          
             for record in ws.iter_rows(min_row=2,values_only=True):
 
                 # Procesando Patient
                 
-                patient = self.env['hc.patient'].search([('mrn', '=', record[0])])
-
+                patient = self.env['res.partner'].search([('name', '=', record[0])])
+                
                 if not patient:
-                    patiend = self.env['hc.patient'].create({
-                        'mrn': record[0],
-                        'hic': record[4],
+                    patient = self.env['res.partner'].create({
+                        'is_patient':True,
                         'name': str(record[1] + ' ' + record[2]).title(),
-                        'first_name': str(record[2]).title(),
-                        'last_name': str(record[1]).title(),
-                        'gender': record[3],
-                        'birth_day': datetime.strptime(record[6], "%m/%d/%Y").date(),
+                        'gender_str': record[3],
+                        'birthday': datetime.strptime(record[6], "%m/%d/%Y").date(),
                         'phone':record[8],
-                        'address': record[10],
+                        'street': record[10],
                         'city':record[11],
-                        'state':record[12],
-                        'zip_code':record[13],
+                        'state_str':record[12],
+                        'zip':record[13],
                         'email': record[14],
                     })
 
@@ -58,21 +54,31 @@ class HCPatientImport(models.TransientModel):
                 if not relation:
                     relation = self.env['hc.contact.relation'].create({'name':relation_name})
 
-                # Procesando Contactos del Paciente
+                # Creando Contacto Emergencia del Paciente    
+                
+                contact_name = str(record[15]).title() # Hay que buscar un campo llave más adecuado
+                contact_phone =  record[17]
 
-                contact_name = str(record[15]).title()
-                contact = self.env['hc.patient.contact'].search([('name', '=', contact_name)])
+                contact = self.env['res.partner'].search([('name', '=', contact_name), ('phone','=', contact_phone)])
+                                
                 if not contact:
-                    contact=self.env['hc.patient.contact'].create({
-                        'patient_id':patiend.id,
-                        'contact_relation_id':relation.id,
+                    contact=self.env['res.partner'].create({
                         'name':contact_name,
-                        'phone': record[17],
-                        'address': record[18],
+                        'phone': contact_phone,
+                        'street': record[18],
                         'city': record[19],
-                        'state': record[20],
-                        'zip_code': record[21],
-                        })
+                        'state_str': record[20],
+                        'zip': record[21]
+                    })   
+
+                # Creando la relacion del paciente con el contacto
+                
+                self.env['hc.patient.contact'].create({
+                        'patient_id':patient.id,
+                        'contact_id':contact.id,
+                        'relation_id':relation.id
+                })
+
 
                 # Procesando farmacia (facility)
 
@@ -93,9 +99,10 @@ class HCPatientImport(models.TransientModel):
                 # Procesando physician
 
                 physician_name = str(record[34]).title()
-                physician = self.env['hc.physician'].search([('name','=',physician_name)])
+                physician = self.env['res.partner'].search([('name','=',physician_name)])
                 if not physician:
-                    physician=self.env['hc.physician'].create({
+                    physician=self.env['res.partner'].create({
+                        'is_physician':True,
                         'name':physician_name,
                         'npi': record[35],
                         'phone': record[36],
@@ -112,19 +119,48 @@ class HCPatientImport(models.TransientModel):
                         'npi': record[35],
                     }) 
 
+
                 # Procesando Intake
 
                 intake = self.env['hc.intake'].create({
+                    'mrn': record[0],
+                    'hic': record[4],
                     'start_date': datetime.strptime(record[25], "%m/%d/%Y").date(), 
                     'end_date': datetime.strptime(record[26], "%m/%d/%Y").date(), 
+                    'state': 'finished',
                     'start_care_date': datetime.strptime(record[24], "%m/%d/%Y").date(), 
-                    'note_diagnostic_primary': str(record[28]).title(),
-                    'note_diagnostic_secondary': str(record[29]).title(),
-                    'disciplines': str(record[30]).title(),
-                    'disciplines_frecuencies': str(record[31]).title(),
+                    
+                    #Se deben procesar las disciplina
+                    'discipline': str(record[30]).title(),
+                    'discipline_frec': str(record[31]).title(),
+
                     'patient_id': patient.id,
                     'physician_id': physician.id
                 })    
+
+                # Procesando Diagnostico Primario
+
+                diagnostic_name = str(record[28]).title()
+                diagnostic = self.env['hc.diagnostic'].search([('name','=',diagnostic_name)])
+                if not diagnostic:
+                    diagnostic = self.env['hc.diagnostic'].create({'name':diagnostic})
+
+                self.env['hc.intake.diagnostic'].create({'intake_id':intake.id,'diagnostic_id': diagnostic.id,'observation': 'Primario'})    
+                
+                # Procesando Diagnostico Secundario
+
+                diagnostic_name = str(record[29]).title()
+                diagnostic = self.env['hc.diagnostic'].search([('name','=',diagnostic_name)])
+                if not diagnostic:
+                    diagnostic = self.env['hc.diagnostic'].create({'name':diagnostic})
+
+                self.env['hc.intake.diagnostic'].create({'intake_id':intake.id,'diagnostic_id': diagnostic.id, 'observation': 'secundario',})   
+
+
+
+
+
+
         except: 
             # raise UserError(_('Please insert a valid file'))
             raise

@@ -16,6 +16,8 @@
         <menuitem id="hc_contact_menu_act" action="hc_contact_action" sequence="5"/>    
 
         <menuitem id="hc_task_menu_act" action="hc_task_action" sequence="6"/>
+
+        
         
          
         <menuitem id="hc_configuration_menu_categ" name="Configuracion" sequence="10">
@@ -40,6 +42,11 @@
             <menuitem id="hc_supply_menu_act" action="hc_supply_action"/>
 
             <menuitem id="hc_procedure_menu_act" action="hc_procedure_action"/>
+            
+            <menuitem id="hc_patient_import_menu_act" action="hc_patient_import_action"/>
+
+
+
         </menuitem>
     </menuitem>
 </odoo>
