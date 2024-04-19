@@ -20,7 +20,7 @@
         
         
          
-        <menuitem id="hc_configuration_menu_categ" name="Configuracion" sequence="10">
+        <menuitem id="hc_configuration_menu_categ" name="Configuration" sequence="10">
             <menuitem id="hc_medicine_menu_act" action="hc_medicine_action" sequence="1"/>
             <menuitem id="hc_medicine_family_menu_act" action="hc_medicine_family_action" sequence="2"/>
 

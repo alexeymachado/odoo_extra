@@ -3,7 +3,7 @@
 
     <data>
         <record id="hc_task_action" model="ir.actions.act_window">
-            <field name="name">task</field>
+            <field name="name">Task</field>
             <field name="res_model">hc.task</field>
             <field name="view_mode">tree,form</field>
         </record>
