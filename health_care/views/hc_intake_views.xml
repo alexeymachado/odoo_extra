@@ -18,8 +18,7 @@
                     <field name="start_date"/>
                     <field name="end_date"/>
                     <field name="mrn"/>
-                    <field name="hic"/>
-                    
+                   
                     <field name="patient_id"/>
                     <field name="referral_id"/>
                     <field name="facility_id"/>
