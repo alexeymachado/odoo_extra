@@ -30,12 +30,18 @@ class HCPatientImport(models.TransientModel):
 
                 # Procesando Patient
                 
-                patient = self.env['res.partner'].search([('name', '=', record[0])])
+                first_name = str(record[2]).title()
+                last_name = str(record[1]).title()
+                name = f"{last_name} {first_name}"
+
+                patient = self.env['res.partner'].search([('name', '=', name)])
                 
                 if not patient:
                     patient = self.env['res.partner'].create({
                         'is_patient':True,
-                        'name': str(record[1] + ' ' + record[2]).title(),
+                        'last_name': last_name,
+                        'first_name': first_name,
+                        'name': name,
                         'gender_str': record[3],
                         'birthday': datetime.strptime(record[6], "%m/%d/%Y").date(),
                         'phone':record[8],
@@ -122,13 +128,24 @@ class HCPatientImport(models.TransientModel):
 
                 # Procesando Intake
 
+                start_date=datetime.strptime(record[25], "%m/%d/%Y").date()
+                end_date = datetime.strptime(record[26], "%m/%d/%Y").date()
+                start_care_date = datetime.strptime(record[24], "%m/%d/%Y").date()
+           
+                if (end_date > datetime.today().date()):
+                    state= 'admitted'
+                else:
+                    state='finished' 
+
+
+
                 intake = self.env['hc.intake'].create({
                     'mrn': record[0],
                     'hic': record[4],
-                    'start_date': datetime.strptime(record[25], "%m/%d/%Y").date(), 
-                    'end_date': datetime.strptime(record[26], "%m/%d/%Y").date(), 
-                    'state': 'finished',
-                    'start_care_date': datetime.strptime(record[24], "%m/%d/%Y").date(), 
+                    'start_date': start_date, 
+                    'end_date': end_date, 
+                    'state': state,
+                    'start_care_date': start_care_date, 
                     
                     #Se deben procesar las disciplina
                     'discipline': str(record[30]).title(),
@@ -143,7 +160,7 @@ class HCPatientImport(models.TransientModel):
                 diagnostic_name = str(record[28]).title()
                 diagnostic = self.env['hc.diagnostic'].search([('name','=',diagnostic_name)])
                 if not diagnostic:
-                    diagnostic = self.env['hc.diagnostic'].create({'name':diagnostic})
+                    diagnostic = self.env['hc.diagnostic'].create({'name':diagnostic_name})
 
                 self.env['hc.intake.diagnostic'].create({'intake_id':intake.id,'diagnostic_id': diagnostic.id,'observation': 'Primario'})    
                 
@@ -152,7 +169,7 @@ class HCPatientImport(models.TransientModel):
                 diagnostic_name = str(record[29]).title()
                 diagnostic = self.env['hc.diagnostic'].search([('name','=',diagnostic_name)])
                 if not diagnostic:
-                    diagnostic = self.env['hc.diagnostic'].create({'name':diagnostic})
+                    diagnostic = self.env['hc.diagnostic'].create({'name':diagnostic_name})
 
                 self.env['hc.intake.diagnostic'].create({'intake_id':intake.id,'diagnostic_id': diagnostic.id, 'observation': 'secundario',})   
 

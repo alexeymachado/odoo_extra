@@ -20,14 +20,13 @@
                     <field name="mrn"/>
                    
                     <field name="patient_id"/>
-                    <field name="referral_id"/>
-                    <field name="facility_id"/>
                     <field name="physician_id"/>
                     <field name="note_emitted_date"/>
                     <field name="order_emitted_date"/>
                     <field name="not_admitted_reason_id"/>
                     <field name="health_care_reason"/>
                     <field name="homebound_reason"/>
+                   
                 </tree>
             </field>
         </record>

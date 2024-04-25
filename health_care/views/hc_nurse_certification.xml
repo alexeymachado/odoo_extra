@@ -14,10 +14,11 @@
             <field name="name">Nurse Certifications List</field>
             <field name="model">hc.nurse.certification</field>
             <field name="arch" type="xml">
-                <tree>
+                <tree editable="bottom">
                     <field name='certification_id'/>
                     <field name='emit_date'/>
                     <field name="expiration_date"/>
+                    <field name="observation"/>
                 </tree>
             </field>
         </record>
@@ -36,8 +37,6 @@
                               <field name="observation"/>
                               <field name="file_binary" filename="file_name" widget="binary"/>
                               <field name="file_name" invisible="1"/>
-                              
-
                         </group>
                     </sheet>
                 </form>

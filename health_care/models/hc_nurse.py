@@ -1,7 +1,7 @@
 from odoo import api, fields, models
 
 class HCNurse(models.Model):
-    _inherit = 'hr.employee'
+    _inherit = ['hr.employee']
 
     category_id = fields.Many2one(comodel_name='hc.nurse.category')
 
@@ -13,13 +13,14 @@ class HCNurse(models.Model):
 
     @api.onchange('is_nurse')
     def _onchange_is_nurse(self):
-        jobs=self.env['hr.job'].search([('name','=','Nurse')])
-        if jobs:
-            job=jobs[0]
-        else:
-            job=self.env['hr.job'].create({'name': "Nurse"})        
-        
-        self.job_id= job.id
+        if (self.is_nurse):
+            jobs=self.env['hr.job'].search([('name','=','Nurse')])
+            if jobs:
+                job=jobs[0]
+            else:
+                job=self.env['hr.job'].create({'name': "Nurse"})        
+            
+            self.job_id= job.id
 
 
 

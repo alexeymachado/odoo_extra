@@ -4,10 +4,16 @@
         <field name="name">HC Contact List</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_tree"/>
-        <field name="mode">primary</field>
-        <field name="priority">20</field>
+        <field name="mode">extension</field>
+        <field name="priority">16</field>
         
         <field name="arch" type="xml">
+            
+            <field name="display_name" position="after">
+                <field name="first_name"/>
+                <field name="last_name"/>
+            </field>
+
             <field name="vat" position="after">
                 <field name="gender"/>
                 <field name="race"/>
@@ -21,12 +27,18 @@
         <field name="name">HC Contact Form </field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
-        <field name="mode">primary</field>
-        <field name="priority">20</field>
+        <field name="mode">extension</field>
+        <field name="priority">16</field>
         
         <field name="arch" type="xml">
+           
+            <xpath expr="//h1" position="after">
+                <group>
+                    <field name="first_name"/>
+                    <field name="last_name" />
+                </group>
+            </xpath>
 
-                        
             <xpath expr="//field[@id='individual']" position="attributes">
                 <attribute name="placeholder">Full Name</attribute>
             </xpath>

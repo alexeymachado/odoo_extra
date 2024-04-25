@@ -7,7 +7,7 @@
     'author': '',
     'website': '',
     'category': '',
-    'depends': ['base', 'web', 'hr'],
+    'depends': ['base', 'web', 'hr', 'stock'],
     "data": [
         "data/hc.facility.type.csv",
         "data/hc.activities.permitted.csv",
