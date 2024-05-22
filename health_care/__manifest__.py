@@ -41,7 +41,6 @@
         "views/hc_facility_views.xml",
         "views/hc_functional_limitation_views.xml",
         "views/hc_patient_contact_views.xml",
-        "security/ir.model.access.csv",
         "views/hc_lead_views.xml",
         
         "views/hc_menuitem.xml",
