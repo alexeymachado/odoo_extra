@@ -22,7 +22,7 @@ class HCIntake(models.Model):
 
     patient_id = fields.Many2one(comodel_name='res.partner', domain=[('is_patient','=',True)])
    
-    name = fields.Char(related='patient_id.name', string="Name", readonly=False, traking=True)
+    name = fields.Char(related='patient_id.name', string="Name", readonly=False, tracking=True)
     
     pat_street = fields.Char(related='patient_id.street', string="Street")
     pat_city = fields.Char(related='patient_id.city', string="City")
