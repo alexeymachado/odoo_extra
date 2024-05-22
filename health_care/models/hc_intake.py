@@ -4,31 +4,30 @@ from odoo import _, api, fields, models
 class HCIntake(models.Model):
     _name = 'hc.intake'
     _description = 'Intake'
-
+    _inherit=['mail.thread', 'mail.activity.mixin', 'avatar.mixin']
+  
+    state = fields.Selection(selection=[('referral', 'Referral'), ('eligibility', 'Eligibility'), 
+        ('intake', 'Intake'), ('admission', 'Admission'), ('finished', 'Finished')], default='referral')
     
-    state = fields.Selection(selection=[('required', 'Required'), ('wait_doc', 'Waiting for Documentation'), 
-        ('not_admitted', 'Not Admitted'), ('admitted', 'Admitted'), ('finished', 'Finished')], default='required')
+    active = fields.Boolean('Active', default=True, tracking=True)
 
-    start_date = fields.Date(default=fields.Date.today())
-    end_date = fields.Date()
+    user_id = fields.Many2one('res.users', string='Salesperson', default=lambda self: self.env.user,  tracking=True)
     not_admitted_reason_id = fields.Many2one(comodel_name='hc.not.admitted.reason')
 
     referral_id = fields.Many2one(comodel_name='res.partner')
 
+    facility_id = fields.Many2one(comodel_name='hc.facility')
+    facility_admit_date = fields.Date()
+    facility_discharge_date = fields.Date()
+
     patient_id = fields.Many2one(comodel_name='res.partner', domain=[('is_patient','=',True)])
    
-    mrn = fields.Char(string='Medical Record Number')
-    hic = fields.Char(string='HIC')
-
+    name = fields.Char(related='patient_id.name', string="Name", readonly=False, traking=True)
+    
     pat_street = fields.Char(related='patient_id.street', string="Street")
     pat_city = fields.Char(related='patient_id.city', string="City")
     pat_state = fields.Char(related='patient_id.state_str', string="State")
     pat_zip_code = fields.Char(related='patient_id.zip', string="Zip")
-    
-
-    facility_id = fields.Many2one(comodel_name='hc.facility')
-    facility_admit_date = fields.Date()
-    facility_discharge_date = fields.Date()
 
     insurance_agent_id = fields.Many2one(comodel_name='hc.insurance.agent', ondelete='cascade')
     insurance_plan_id = fields.Many2one(comodel_name='hc.insurance.plan', ondelete='cascade')
@@ -49,7 +48,13 @@ class HCIntake(models.Model):
     order_emitted_date = fields.Date()
     order_observation = fields.Text()
     
-
+    start_date = fields.Date(default=fields.Date.today())
+    estimated_len_of_stay = fields.Integer()
+    estimated_end_date = fields.Date()
+    
+    mrn = fields.Char(string='MRN')
+    hic = fields.Char(string='HIC')
+    
     functional_limitation_ids = fields.Many2many(comodel_name='hc.functional.limitation')
     flags_ids = fields.Many2many(comodel_name='hc.flags')
     activities_permitted = fields.Many2many(comodel_name='hc.activities.permitted')
@@ -93,8 +98,4 @@ class HCIntake(models.Model):
         self.write({'state':"admitted"})
 
     def set_finish(self):
-        self.write({'state':"finished"})              
-
-    
-
-
+        self.write({'state':"finished"})          

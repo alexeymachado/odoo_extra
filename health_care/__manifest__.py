@@ -7,7 +7,7 @@
     'author': '',
     'website': '',
     'category': '',
-    'depends': ['base', 'web', 'hr', 'stock'],
+    'depends': ['base', 'web', 'hr', 'stock', 'mail', 'crm'],
     "data": [
         "data/hc.facility.type.csv",
         "data/hc.activities.permitted.csv",
@@ -15,12 +15,11 @@
         "data/hc.functional.limitation.csv",
         "data/hc.not.admitted.reason.csv",
         "data/hc.discipline.csv",
-        "security/ir.model.access.csv",
         "views/hc_contact_views.xml",
         "views/hc_contact_relation_views.xml",
         "views/hc_certification_views.xml",
-        "views/hc_patient_views.xml",
         "views/hc_patient_import_views.xml",
+        "views/hc_patient_views.xml",
         "views/hc_physician_views.xml",
         "views/hc_nurse_views.xml",
         "views/hc_nurse_category_views.xml",
@@ -41,8 +40,12 @@
         "views/hc_facility_type_views.xml",
         "views/hc_facility_views.xml",
         "views/hc_functional_limitation_views.xml",
-        "views/hc_menuitem.xml",
         "views/hc_patient_contact_views.xml",
+        "security/ir.model.access.csv",
+        "views/hc_lead_views.xml",
+        
+        "views/hc_menuitem.xml",
+
         "security/ir.model.access.csv"
     ],
     'assets': {

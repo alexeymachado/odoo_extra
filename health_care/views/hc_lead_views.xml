@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hc_lead_view_tree" model="ir.ui.view">
+        <field name="name">view.hc_lead.tree</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="mode">extension</field>
+        <field name="priority">16</field>  
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <field name="reference_by"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hc_lead_view_form" model="ir.ui.view">
+        <field name="name">view.hc_lead.form</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Insurance">
+                    <group>
+                        <field name="insurance_agency_id" string="Agency"/>
+                        <field name="insurance_number" string="Number"/>
+                        <field name="insurance_plan_id" string="Plan" />
+                        <field name="insurance_aproved" string="Aproved"/>
+                    </group>
+                </page>
+                <page string="Note">
+                    <group>
+                        <field name="note_received_date" string="Received Date" />
+                        <field name="note_emitted_date" string="Emitted Date" />
+                        <field name="note_observation" string="Observation" />
+                    </group>
+                </page>
+                <page string="Order">
+                    <group>
+                        <field name="order_received_date" string="Received Date" />
+                        <field name="order_emitted_date" string="Emitted Date" />
+                        <field name="order_observation" string="Observation" />
+                     </group>   
+                </page>
+                
+            </xpath>
+     
+        </field>
+    </record>
+
+    <!-- View hc_lead search -->
+    <!-- <record id="view_hc_lead_search" model="ir.ui.view">
+        <field name="name">view.hc_lead.search</field>
+        <field name="model">crm_lead</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="1" string="Group By">
+                    <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>
+                </group>
+            </search>
+        </field>
+    </record> -->
+
+    <record id="hc_lead_action" model="ir.actions.act_window">
+        <field name="name">Oportunidades</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">crm.lead</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Hc_lead.
+            </p>
+        </field>
+    </record>
+
+</odoo>

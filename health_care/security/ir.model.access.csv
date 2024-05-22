@@ -27,4 +27,3 @@ access_hc_not_admitted_reason,hc.not.admitted.reason,model_hc_not_admitted_reaso
 access_hc_patient_contact,hc.patient.contact,model_hc_patient_contact,base.group_user,1,1,1,1
 access_hc_patient_import,hc.patient.import,model_hc_patient_import,base.group_user,1,1,1,1
 access_hc_intake_procedure,hc.intake.procedure,model_hc_intake_procedure,base.group_user,1,1,1,1
-
