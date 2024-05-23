@@ -31,8 +31,8 @@
                 <attribute name="invisible">1</attribute>
             </field>
 
-            <field name="priority" position="attributes">
-                <attribute name="nolabel">0</attribute>
+            <field name="priority" position="replace">
+                <field name="priority" widget="priority" class="oe_inline align-top"/>
             </field>
 
             <xpath expr="//page[@name='lead']" position="attributes">
@@ -40,9 +40,9 @@
             </xpath>
 
             <notebook position="inside">
-                <page string="Address">
+                <page string="Address" autofocus="autofocus">
 
-                    <label for="street_page_lead" string="Address"/>
+                    <!-- <label for="street_page_lead" string="Address"/> -->
                     <div class="o_address_format">
                         <field name="street" id="street_page_lead" placeholder="Street..." class="o_address_street"/>
                         <field name="street2" placeholder="Street 2..." class="o_address_street"/>
